@@ -1,4 +1,8 @@
-
+:root{
+ --prim--color : blue ;
+ --second--color:#C38EB4;
+ --third--color:#E1CBD7;
+  --fourth--color:blue;
 .Q {
  width:400px;
  padding: 80px;
