@@ -1,9 +1,15 @@
 :root{
- --prim--color : blue ;
- --second--color:#C38EB4;
+ --prim--color : rgb(36,36,58);
+ --second--color:#da9dc7;
  --third--color:#E1CBD7;
-  --fourth--color:blue;
+  --fourth--color:#0A1F2E;}
+  body{
+      background: linear-gradient(125deg,var(--fourth--color), var(--third--color), var(---color));
+  }
 .Q {
  width:400px;
  padding: 80px;
+ margin: 400px;
+ color: var(--second--color);
+ text-shadow: 0 6px 10px var(--fourth--color);
 }
