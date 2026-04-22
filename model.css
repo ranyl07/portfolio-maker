@@ -1,7 +1,7 @@
 :root{
 --prim--color: #75619d;
 --second--color : #3F2A52;
---third--color : #E6EFF7 ;
+--third--color : #babec2 ;
 --fourth--color : #3A2D34;
 }
 .parent {
@@ -11,13 +11,14 @@
 
 }
 body{
-    background-color: var(--fourth--color);
+    background: linear-gradient(var(--fourth--color),var(--second--color),var(--prim--color),var(--third--color),var(--prim--color),var(--second--color),var(--fourth--color));
     color :#75619d;
     text-align: center;
     font-family: Times,'Times New Roman', serif;
     margin: 0;
     padding:0 ;
     text-shadow:  0 4px 10px black;
+    backdrop-filter: blur(8px);
    
 }
 #name{
@@ -115,12 +116,12 @@ ul {
     box-shadow: 0 5px  10px #E6EFF7 ;
     width: 300px;
     min-height: 150px;
-    margin: 20px;
-    padding: 20px;  
+    margin: 20px ;
+    padding: 20px 50px;  
     color: var(--third--color);
-    display: inline-block;
+    
     text-align: left;
-    transition: transform 0.6 ease;
+   
 }
 .child{
     display: block;
