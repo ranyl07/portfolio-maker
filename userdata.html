@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio maker</title>
-    <link>
+    <link rel="stylesheet" href="userdataa.css">
 </head>
 <body>
     <div class="Q">
         <div>
-            <h1>Create you own</h1>
+            <h1>Create your own</h1>
             <p>Answer the question to fill your porftolio</p>
         </div>
+        <section>
             <div class="form">
                     <form>
                        <fieldset> 
@@ -32,7 +33,7 @@
             </div>
             <div class="About">
                 <fieldset>
-                    <legend>About Me</legend>
+                    <legend> About you </legend>
                 <label >
                     derscribe yourself in few lines <br>
                 </label>
@@ -40,11 +41,52 @@
                 <br> 
                 <label>Tagline</label> <br>
                 <input type="text" id="tagline" width="30" placeholder="express in one sentence"> <br>
-                <label for="pic"> Enter your pic/avatar</label><br>
+                <label for="pic"> Upload your pic/avatar</label><br>
                 <input type="file" id="pic" accept="image/*">
-                <labe ></
+                </fieldset>
+                <div class="">
+
+                </div>  
+            <div class="skill-exist"></div>
+             <fieldset>
+                <legend>Skills</legend>
+                <label > do you have any skills?</label><br>
+                <button id="yes" class="btn"> yes </button>
+                <button class="btn"> No </button>
+             </fieldset>
+             </div>
+             <div class="skill-categ">
+                <fieldset>
+                    <legend>Your skills</legend>
+                  <input type="text" placeholder="">
+                  <button class="btn">add</button>
+                </fieldset>
+            <div>
+                <fieldset>
+                    <legend>Projects</legend>
+                    <label>Do you have any projects?</label><br>
+                      <button id="true" class="btn"> yes </button>
+                      <button class="btn"> No </button>
                 </fieldset>
             </div>
+
+            <div class="projects-categ">
+                <form>
+                <fieldset>
+                    <legend> Your Projects</legend>
+                    <label>the title of your project</label>
+                 <input type="text" placeholder="" title><br>
+                  <label for="pic"> Upload a picture of your project</label><br>
+                  <input type="file" accept="image/*">
+                  <label></label>
+             </form>
+            </fieldset>
             </div>
+
+             </div>
+            </div>
+        </section>
+       
+    </div>
 </body>
 </html>
