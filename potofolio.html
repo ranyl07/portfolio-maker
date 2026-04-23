@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Portfolio</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="potofolio.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body class="bodyy">
+ <div id="flash-black"></div>
+ <header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">Makefolio</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">About us</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link disabled">Portofolio</a>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+</header>
+
+<section class="A">
+
+  <div class="hero">
+
+    <div class="user-prt">
+
+      <h1 class="HH1">
+       {{ Hi, I'M <em>Soundos Ghozlane</em> a web developer}}
+      </h1>
+
+      <p class="Welcome-p">
+        {{I am a beginner in web development. I have experience working with WordPress, content creation, and basic SEO. I have created and managed simple websites, generated articles, and optimized content to improve search engine visibility. I am motivated to learn more and improve my skills in web development and digital marketing.}} 
+      </p>
+
+    </div>
+
+    <img class="picf" src="img/img1.png" alt="profile">
+
+  </div>
+
+  <div class="btn-pic">
+
+  <button onclick="scrollToSection('education')">
+    <img src="https://i.pinimg.com/736x/de/4d/75/de4d75313383d83c4936f693d842e04b.jpg">
+  </button>
+
+  <button onclick="scrollToSection('experience')">
+    <img src="https://i.pinimg.com/736x/b5/8a/84/b58a847c49457e25a1bcd95a98de534d.jpg">
+  </button>
+
+  <button onclick="scrollToSection('projects')">
+    <img src="https://i.pinimg.com/736x/55/64/83/55648380b2cafcff598178413ca9eec9.jpg">
+  </button>
+
+  <button onclick="scrollToSection('contact')">
+    <img src="https://i.pinimg.com/736x/af/66/c4/af66c4d3da2646e8a08b42f02cea25d3.jpg">
+  </button>
+
+</div>
+</section>
+
+<section class="descrp">
+
+  <div class="Education-des fade-section" id="education">
+    <h2>{{EDUCATION}}</h2>
+
+    <p class="descriptin">
+      {{I am a second-year Bachelor's student in Computer Science, where I am building a strong foundation in programming, web technologies, algorithms, and databases. I am actively developing my skills through academic courses and personal projects, with a strong interest in web development and digital technologies.}}
+    </p>
+
+  </div>
+
+  <div class="Experience-des fade-section " id="experience">
+    <h2>{{EXPERIENCE}}</h2>
+
+    <p class="descriptin">
+      {{I have experience using AI tools to support content creation and SEO optimization. I use these tools to generate ideas, structure articles, and improve writing quality. They also help me optimize content for search engines by enhancing keyword usage, readability, and overall performance. I worked on my first website project, where I applied these skills and found the process both enjoyable and easy to learn. This allows me to create efficient, engaging, and well-optimized web content.}}
+    </p>
+
+  </div>
+
+  <div class="Work-des fade-section" id="projects">
+    <h2>{{SOME OF MY PROJECTS}}</h2>
+    <p class="descriptin"></p>
+  </div>
+
+  <div class="contact-me fade-section" id="contact">
+
+    <h2>{{CONTACT ME}}</h2>
+
+    <div class="btn-cn">
+
+      <div class="item">
+        <img src="https://i.pinimg.com/1200x/87/04/0c/87040cb8c51cb7b1f236c816189d2002.jpg">
+        <p>12345</p>
+      </div>
+
+      <div class="item">
+        <img src="https://i.pinimg.com/1200x/63/e6/1a/63e61a8f4a158c31565a57999baae7c4.jpg">
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+      </div>
+
+      <div class="item">
+        <img src="https://i.pinimg.com/736x/ec/14/2f/ec142f93f56ee68be649558ad3266669.jpg">
+        <a href="mailto:example@gmail.com">Gmail</a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<script>
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const flash = document.getElementById("flash-black");
+
+    if (!section || !flash) return;
+    flash.style.opacity = "0.9";
+
+    setTimeout(() => {
+      // scroll
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+      flash.style.opacity = "0";
+
+    }, 150);
+  }
+</script>
+</script>
+</script>
+</body>
+</html>
