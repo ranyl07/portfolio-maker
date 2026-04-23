@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hadyl's model</title>
+    <link rel="stylesheet" href="model.css">
+</head>
+<body>
+     <div class="parent">
+        <nav>
+            <ul>
+                <li class="nav"><a href="#1">About Me</a></li>
+                <li class="nav"><a href="#2">My skills</a></li>
+                <li class="nav"><a href="#3">My experience</a></li>
+                <li class="nav"><a href="#4">My Projects</a></li>
+                <li class="nav"><a href="#5">Contact Me</a></li>
+            </ul>
+        </nav>
+         <section id="1"><div class="header">
+            <h1 id="name"> {{ Name or logo }}</h1>
+            <em>{{"tagline"}}</em>
+        </div>        
+        <div class="discreption">
+            <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Your photo" id="avatar" class="child">
+            <div class="s">
+                <h2> {{About Me}} </h2>
+            <p class="about">{{small paragraph about your self }}</p>
+            </div>
+        </div> </section>
+        <section id="2">
+        <div class="skills">
+            <h2>{{My skills}}</h2>
+            <ul>
+                <ul id="full">
+                    <li class="box">
+                         {{skill number 1}}
+                        <p class="display">{{"which level you reached with this skill"}}</p>
+                    </li>
+                    <li class="box">
+                        {{skill number 2}}
+                        <p class="display">{{"which level you reached with this skill"}}</p>
+                    </li>
+                    <li class="box">
+                        {{skill number 3}}
+                        <p class="display">{{"which level you reached with this skill"}}</p>     
+                    </li> 
+                </ul>
+            </ul>
+        </div>
+        </section>
+        <section id="3">
+            <div class="experience">
+                <h2>My experience</h2>
+                
+            </div>
+        </section>
+        <sectin id="4">
+    <div class="projects">
+        <h2>My Projects</h2>
+         <ul id="p">
+                <li class="boxs">{{Project 1}}
+                    <p class="display">{{discribe your project}}</p>
+                </li>
+                <li class="boxs">
+                    {{Project 2}}
+                    <p class="display">
+                        {{ discribe your project}}
+                        </p>
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+                </li>
+                <li class="boxs">{{Project 3}}
+                    <p class="display">{{discribe your project}}</p>
+                    <img src="https://picsum.photos/300/180">
+                </li>
+                 <li class="boxs"> {{Project 4}}
+                    <p class="display"> {{discribe your project , a web that helps you to make portfolio}}</p><!--shows up when the box is hovered-->
+                    <img src="https://picsum.photos/300/180">
+                </li>
+        </ul>
+    </div>
+    </sectin>
+    <section id="5">
+    <div class="contact">
+        <h2> {{My contact}} </h2>
+        <ul class="c">
+            <li class="link"> <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="email" width="24" class="logo"></a></li><!--add icon links-->
+            <li class="link">
+                <a  href="#">
+                    <img src="https://cdn.prod.website-files.com/6479b8d98bf5dcb4a69c4f31/6493999d57ad8123b314b6cf_linkedin%20(1).svg" alt="LinkedIn Logo"  width="24" class="logo"></a>
+                 </li>
+                <li class="link">
+                    <a href="#">
+                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="phone" width="24" id="phone" class="logo">
+                </li>
+        </ul>
+    </div>
+    </div>
+    </section>
+</body>
+</html>

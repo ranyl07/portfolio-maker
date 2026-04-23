@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio Clean</title>
+
+<link rel="stylesheet" href="portfolio.css">
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">My Portfolio</div>
+  <ul>
+    <li onclick="scrollToSec('about')">About</li>
+    <li onclick="scrollToSec('skills')">Skills</li>
+    <li onclick="scrollToSec('projects')">Projects</li>
+    <li onclick="scrollToSec('experience')">Experience</li>
+    <li onclick="scrollToSec('education')">Education</li>
+    <li onclick="scrollToSec('certificates')">Certificates</li>
+    <li onclick="scrollToSec('contact')">Contact</li>
+  </ul>
+</nav>
+
+<div class="left">
+  <div class="avatar-box">
+    📷 Your Photo Here
+  </div>
+
+  <h1>Hi, I'm <span id="username">Your Name</span></h1>
+  <p id="about1">Your description here...</p>
+  <p id="about2">Second line here...</p>
+</div>
+
+<div class="right">
+
+  <div class="section" id="about">
+     <h2>🟣 ABOUT</h2>
+    <div class="card" id="aboutText">Write about yourself...</div>
+  </div>
+
+  <div class="section" id="skills">
+    <h2>🟣 SKILLS</h2>
+    <div class="skills" id="skillsBox"></div>
+  </div>
+
+  <div class="section" id="projects">
+    <h2>🟣 PROJECTS</h2>
+    <div id="projectsBox"></div>
+  </div>
+
+  <div class="section" id="experience">
+    <h2>🟣 EXPERIENCE</h2>
+    <div id="expBox"></div>
+  </div>
+
+  <div class="section" id="education">
+    <h2>🟣 EDUCATION</h2>
+    <div id="eduBox"></div>
+  </div>
+
+  <div class="section" id="certificates">
+    <h2>🟣 CERTIFICATES</h2>
+    <div id="certBox"></div>
+  </div>
+
+  <div class="section" id="contact">
+    <h2>🟣 CONTACT</h2>
+    <div id="contactBox"></div>
+  </div>
+
+</div>
+
+<script src="portfolio.js"></script>
+
+</body>
+</html>
