@@ -48,4 +48,13 @@ input{
 .appear {
     display: none;
 }
-
+card{
+    background: #c3b7be;
+    border-radius: 10px;
+    box-sizing: border-box;
+     width:420px;
+ padding: 40px;
+ margin: 100px;
+  align-items: center;
+ justify-content: center;
+}

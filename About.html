@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)file:///C:/Users/tassili/about.html -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>About</title>
+  <link rel="stylesheet" href="userdata.css">
+</head>
+<body>
+
+<div class="about-container">
+
+  <h1>About Portfolio</h1>
+
+  <div class="card">
+    <h2>Problem</h2>
+    <p>
+     In today’s digital world, many people struggle to properly present their skills, projects, 
+     and experience in a clear and professional way. Whether in design, development, or other creative fields,
+      work often remains unorganized or hidden, making it difficult for others to evaluate talent and potential.
+     Without a structured way to showcase achievements, it becomes harder to stand out in a competitive environment and attract opportunities.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>What is a Portfolio?</h2>
+    <p>
+   A portfolio is a personal digital website that represents your identity as a creative or technical professional. It contains your projects, skills, experience, and achievements in one organized place. Instead of just writing about yourself, a portfolio allows you to show real examples of your work and demonstrate your abilities visually.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>Why You Need It?</h2>
+    <p>
+Having a portfolio is very important in today’s competitive world. It helps you stand out from others, increases your chances of getting hired, and attracts potential clients. A well-designed portfolio builds trust and shows professionalism, making it easier for people to understand your value and skills.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>How to Make &amp; Share</h2>
+    <p>
+     This application helps you easily create your own portfolio step by step. You can start by adding your personal information, then upload your projects, skills, and experiences using simple forms. The app automatically organizes everything into a clean and professional layout. Once you finish, you can preview your portfolio in real time and publish it with a single click. After publishing, you receive a shareable link that you can send to employers, clients, or post on social media.
+    </p>
+  </div>
+
+</div>
+
+
+
+
+
+<script>
+const tooltip = document.createElement("div");
+tooltip.classList.add("tooltip");
+document.body.appendChild(tooltip);
+
+document.querySelectorAll(".hover-text").forEach(p => {
+
+  p.addEventListener("mousemove", (e) => {
+    tooltip.style.left = e.pageX + 10 + "px";
+    tooltip.style.top = e.pageY + 10 + "px";
+  });
+
+  p.addEventListener("mouseenter", () => {
+    tooltip.innerText = p.getAttribute("data-info");
+    tooltip.style.opacity = 1;
+  });
+
+  p.addEventListener("mouseleave", () => {
+    tooltip.style.opacity = 0;
+  });
+
+});
+</script> <div class="tooltip"></div>
+
+
+</body></html>
