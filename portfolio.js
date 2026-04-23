@@ -1,14 +1,14 @@
 const user = {
   name: "Your Name",
   email: "your@email.com",
-  phone: "00000000"
+  phone: "+213 *** ** ** **"
 };
 
 const portfolio = {
   about: "I am a passionate developer / creative person."
 };
 
-const skills = ["HTML", "CSS", "JavaScript"];
+const skills = ["skill1", "skill2", "skill3"];
 
 const projects = [
   { title: "Project 1", desc: "Description here" },
