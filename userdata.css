@@ -3,17 +3,17 @@
  --second--color:#534950; /*font color*/
  --third--color:#c3b7be;
   --fourth--color:#0A1F2E;
-  /*background=linear-gradient(var(--fourth--color),var(--third--color), var(--third--color), var(--fourth--color)*/
 }
   body{
-      background: linear-gradient(var(--fourth--color),var(--third--color), #bd8fb0,var(--third--color), var(--fourth--color));
+      background: linear-gradient(to right, var(--fourth--color), var(--third--color), #bd8fb0, var(--third--color), var(--fourth--color));
       min-height: 100vh;
       margin: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: var(--third--color);
-
+     background: linear-gradient(to bottom, var(--fourth--color), var(--third--color), #bd8fb0, var(--third--color), var(--fourth--color));
+-webkit-background-clip: text;
+background-clip: text;
   }
 .fill {
  width:420px;
@@ -21,7 +21,6 @@
  align-items: center;
  justify-content: center;
  margin: auto;
- color: var(--third--color);
  text-shadow: 0px 4px 7px black;
  background: rgba(255, 255, 255,0.06);
  backdrop-filter: blur(8px);
@@ -29,6 +28,7 @@
  box-shadow: 0 8px 32px rgba(0, 0,0, 0.3);
  border-radius: 10px;
  display: none;
+ color: var(--fourth--color);
 }
 fieldset{
     padding: 20px;
@@ -48,25 +48,29 @@ input{
     padding: 8px , 12px;
     color: black;
 }
-#welcome{
-    top:0;
-    z-index: 100;
-   
+h1{
     text-align: center;
-    font-size: 24px;
-    border-radius: 15px;
-    width:100%;
- padding: 20px;
+    color: var(--fourth--color);
+    text-shadow: 0px 4px 7px black;
+}
+#welcome{
+text-align: center;
+font-size: 24px;
+border-radius: 15px;
+ width:70% ;
+ padding: 160px;
+ 
  align-items: center;
  justify-content: center;
- margin: 100px;
+ margin: 70px 90px;
  color: var(--third--color);
  background: rgba(255, 255, 255,0.06);
  backdrop-filter: blur(8px);
  font-weight: 100;
  box-shadow: 0 8px 32px rgba(0, 0, 0.3);
  border-radius: 15px;
- text-shadow: 0px 4px 7px black;     }
+ text-shadow: 0px 4px 7px black;
+}
 button{
         padding: 10px 20px;
         background-color: var(--prim--color);
@@ -75,8 +79,12 @@ button{
         border-radius: 15px;
         cursor: pointer;
 }
-    button:hover{
+button:hover{
         background-color: var(--fourth--color);
         color: var(--second--color);
-    }
+}
+label{
+    font-size: 20px;
+    color: var(--fourth--color);
+}
 
