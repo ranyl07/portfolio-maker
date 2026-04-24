@@ -9,8 +9,10 @@
 <body>
     <div class="Q">
     
-             <h1>Create your own</h1>
-             <p>Answer the question to fill your porftolio</p>
+            <div id="welcome">
+                <h1>Welcome to MakeFolio</h1>
+                <p id="make">Let's start by creating your portfolio</p>
+                <button class="Start">Start</button>
              <div class="fill" id="form"> <!--i gave everey question div a fill class-->
                     <form>
                        <fieldset> 
@@ -26,6 +28,8 @@
                          </label>
                       </fieldset>
                       </form>
+                      <button class="pre">Previous</button>
+                      <button class="next">Next</button>
                       </div>
 
              <div class="fill" id="about">
@@ -36,15 +40,15 @@
                 </label>
                 <input type="text" id="discribe" name="message" rows="2" cols="25"  width="200" >
                 <br> 
-                <label>Tagline</label> <br>
+                <label>Tagline</label><br>
                 <input type="text" id="tagline" width="30" placeholder="express in one sentence"> <br>
                 <label for="pic"> Upload your pic/avatar</label><br>
                 <input type="file" id="pic" accept="image/*">
                 </fieldset>
+                <button class="pre">Previous</button>
+                      <button class="next">Next</button>
              </div>
 
-          <button class="suivant">Next</button>
-          <button class="pre">previous</button>
 
              <div class="fill" id="skills">
              <fieldset>
@@ -53,6 +57,8 @@
                 <button id="yes" class="skill"> yes </button>
                 <button class="no"> No </button>
              </fieldset>
+             <button class="pre">Previous</button>
+      
              </div>
              <div  class="fill" id="skill-add">
                 <fieldset>
@@ -60,10 +66,11 @@
                   <input type="text" placeholder="Enter a skill">
                   <button class="btn">add</button>
                 </fieldset>
-            </div>
+                <button class="pre">Previous</button>
+                        <button class="next">Next</button>
+                      
 
-           <button class="suivant">Next</button>
-           <button>previous</button>
+            </div>
 
              <div class="fill" id="skills">
              <fieldset>
@@ -72,6 +79,8 @@
                 <button id="exist" class="experience"> yes </button>
                 <button class="no"> No </button>
              </fieldset>
+             <button class="pre">Previous</button>
+                      
              </div>
              <div  class="fill" id="experience-add">
                 <fieldset>
@@ -79,9 +88,11 @@
                   <input type="text" placeholder="Enter your experience">
                   <button class="btn">add</button>
                 </fieldset>
+                <button class="pre">Previous</button>
+                      <button class="next">Next</button>
+               
             </div>
-                 <button class="pre">previous</button>
-                 <button class="suivant">Next</button>
+                 
                
             <div class="fill">
                  <fieldset > 
@@ -90,6 +101,8 @@
                       <button id="bool" class="btn"> yes </button>
                       <button class="no"> No </button>
                 </fieldset>
+                <button class="pre">Previous</button>
+                      
             </div>
             <div class="fill">
                 <form>
@@ -102,9 +115,10 @@
                   <button class="btn">add</button>
              </form>
             </fieldset>
+            <button class="pre">Previous</button>
+                      <button class="next">Next</button>
+                     
             </div>
-            <button class="pre">previous</button>
-            <button class="suivant">Next</button>
 
              <div class="fill">
                 <fieldset >
@@ -113,6 +127,8 @@
                       <button id="true" class="btn"> yes </button>
                       <button class="no"> No </button>
                 </fieldset>
+                <button class="pre">Previous</button>
+                      
             </div>
              <div class="fill">
                 <form>
@@ -122,12 +138,24 @@
                  <input type="url" placeholder="https://instgram.com/username">
                   <button class="btn">add</button>
              </form>
+              <button class="pre">Previous</button>
+                      <button class="next">Next</button>
              </fieldset>
              </div>
-             <button class="pre">previous</button>
-             <button class="suivant">Next</button>
+               <div class="fill">
+                  <fieldset>
+                     <legend>Theme</legend>
+                     <label>Do you want to add a theme?</label><br>
+                        <button id="theme" class="btn"> yes </button>
+                        <button class="no"> No </button>
+                  </fieldset>
+                  <button class="pre">Previous</button>
+                  <button class="s">Submit</button>
              </div>
-             </div> 
+               
+             </div>      
+                       
+             
         
     </div>
     <script src="userdata.js">
