@@ -1,0 +1,50 @@
+:root{
+ --prim--color : rgb(36,36,58);
+ --second--color:#534950; /*font color*/
+ --third--color:#c3b7be;
+  --fourth--color:#0A1F2E;
+  /*background=linear-gradient(var(--fourth--color),var(--third--color), var(--third--color), var(--fourth--color)*/
+}
+  body{
+      background: linear-gradient(var(--fourth--color),var(--third--color), var(--third--color), var(--fourth--color));
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+.Q {
+ width:420px;
+ padding: 40px;
+ align-items: center;
+ justify-content: center;
+ margin: 100px;
+ color: var(--second--color);
+ text-shadow: 0px 4px 7px black;
+ background: rgba(255, 255, 255,0.06);
+ backdrop-filter: blur(8px);
+ font-weight: 100px;
+ box-shadow: 0 8px 32px rgb(0, 0, 0,3);
+ border-radius: 10px;
+}
+fieldset{
+    padding: 20px;
+    margin-bottom: 20px;
+    
+}
+label{
+    font-size: 14px;
+}
+#pic{
+    padding: 10px;
+    border-radius: 50px;
+}
+input{
+    margin: 5px 0 10px;
+    width: 100%;
+    padding: 8px , 12px;
+    color: black;
+}
+.appear {
+    display: none;
+}
