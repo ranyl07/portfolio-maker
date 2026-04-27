@@ -87,4 +87,24 @@ label{
     font-size: 20px;
     color: var(--fourth--color);
 }
-
+.skill{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #e0f0ff;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin: 4px;
+    font-size: 13px;
+}
+.delete{
+     background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
+    padding: 0;
+    line-height: 1;
+}
+.delete:hover {
+    transform: scale(1.2);
+}

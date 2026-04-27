@@ -1,9 +1,4 @@
-:root{
---prim--color: #4e4166;
---second--color: #3F2A52;
---third--color: #a5a9ac ;
---fourth--color: #3A2D34;
-}
+
 html{
     scroll-behavior: smooth;
 }
@@ -19,7 +14,7 @@ nav{
     position: sticky;
     top: 0;
     z-index: 100;
-    background: linear-gradient( to right,var(--prim--color),var(--second--color),var(--third--color),var(--second--color),var(--prim--color));
+    background: linear-gradient( to right,var(--fifth--color),var(--prim--color),var(--second--color),var(--third--color),var(--second--color),var(--prim--color),var(--fifth--color));
     border-radius: 5%;
     backdrop-filter: blur(80px);
 }
@@ -45,6 +40,7 @@ nav a{
 }
 body{
     background: linear-gradient(var(--fourth--color),var(--second--color),var(--prim--color),var(--third--color),var(--prim--color),var(--second--color),var(--fourth--color));
+    
     color :#b1a8c4;
     text-align: center;
     font-family: Times,'Times New Roman', serif;
