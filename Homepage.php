@@ -46,18 +46,17 @@
       <a href="hadylmodel.html" >
        <img src="img/design1.png" alt="project">
       <div class="overlay">
-        <h3>Project 1</h3> 
+        <h3>Project 1</h3></div> 
       </a>
-      </div>
+    
     </div>
 
     <div class="card">
        <a href="portfolio.html" >
         <img src="img/design2.png" alt="project">
       <div class="overlay">
-        <h3>Project 2</h3>
+        <h3>Project 2</h3></div>
       </a>
-      </div>
     </div>
 
     <div class="card">
@@ -67,7 +66,6 @@
         <h3>Project 3</h3>
       </div>
       </a>
-    </div>
   </div>
 
 </section>
@@ -93,6 +91,20 @@
             </div>
 
         </div>
+      <?php 
+$server = "localhost";
+$username = "root";
+$password = "";
+$database = "makefolio";
+
+$conn = mysqli_connect($server, $username, $password, $database);
+
+if (!$conn) {
+    die("Connection Failed: " . mysqli_connect_error());
+}
+
+echo "Welcome";
+?>
     </section>
 <script>
 const container = document.getElementById("cardContainer");
@@ -113,4 +125,4 @@ function scrollCardsRight() {
 </script>
 
 </body>
-</html>
+</html>       
