@@ -79,3 +79,19 @@ back.addEventListener("click", function(){
     c = history.pop();
     q[c].style.display = "block";}
 });
+let submit = document.querySelector("#submit");
+submit.addEventListener("click", function(){
+    const user ={
+      template: selectedTemplate,//declare the selected template variable gwe will set it when the user clicks on a template//
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value,
+     tagline: document.getElementById("tagline").value,
+     about: document.getElementById("about").value,
+     skills: [...document.querySelectorAll(".skills")].map(el => el.firstChild.textContent.trim()),
+     experience: [...document.querySelectorAll(".experience")].map(el => el.firstChild.textContent.trim()),
+     projects: [...document.querySelectorAll(".projects")].map(el => el.firstChild.textContent.trim()),
+     contact : [...document.querySelectorAll(".contact")].map(el => el.firstChild.textContent.trim()),
+     avatar: document.getElementById("pic").files[0] ? URL.createObjectURL(document.getElementById("pic").files[0]) : null
+    }
+;});

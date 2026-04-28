@@ -18,18 +18,18 @@
                        <fieldset> 
                         <legend>Personal Informations</legend>
                          <label for="name">Name</label><br>
-                         <input type="text" placeholder="Enter your name" id="name" required> <br>
+                         <input type="text" placeholder="Enter your name" id="user-name" required> <br>
                          <label for="email">Email</label><br>
-                         <input type="email"  id="email" required> <br>
+                         <input type="email"  id="user-email" required> <br>
                          <label for="phone">Phone Number</label><br>
-                         <input type="number" id="phone" required><br>
+                         <input type="number" id="user-phone" required><br>
                          <label for="linkedin"> LinkedIn <br>
-                            <input type="url" placeholder="optional">
+                         <input type="url" placeholder="optional">
                          </label>
-                      </fieldset>
+                        </fieldset>
                       </form>
                       <button class="next">Next</button>
-                      </div>
+               </div>
 
              <div class="fill" id="about">
                  <fieldset>
@@ -37,12 +37,12 @@
                  <label >
                     derscribe yourself in few lines<br>
                 </label>
-                <input type="text" id="discribe" name="message" rows="2" cols="25"  width="200" >
+                <input type="text" id="user-about" name="message" rows="2" cols="25"  width="200" >
                 <br> 
                 <label>Tagline</label><br>
-                <input type="text" id="tagline" width="30" placeholder="express in one sentence"> <br>
+                <input type="text" id="user-tagline" width="30" placeholder="express in one sentence"> <br>
                 <label for="pic"> Upload your pic/avatar</label><br>
-                <input type="file" id="pic" accept="image/*">
+                <input type="file" id="user-pic" accept="image/*">
                 </fieldset>
                 <button class="pre">Previous</button>
                 <button class="next">Next</button>
@@ -62,7 +62,8 @@
              <div  class="fill" id="skill-add">
                 <fieldset>
                     <legend>Your skills</legend>
-                  <input type="text" placeholder="Enter a skill" id="skill" class="">
+                  <input type="text" placeholder="Enter a skill" id="skill" >
+                  <input type="text" placeholder="skill level, describtion" id="skill-description">
                   <button class="add">add</button>
                   <div class="tags"></div>
                 </fieldset>
@@ -113,6 +114,8 @@
                  <input type="text" placeholder="Title"><br>
                   <label for="Link">Enter your project link</label><br>
                   <input type="url" id="Link" placeholder="https://makefolio.com">
+                  <label for="description">Enter a brief description</label><br>
+                  <input type="text" id="description" placeholder="Description">
                   <button class="add">add</button>
                   <div class="tags"></div>
              </form>
@@ -145,13 +148,8 @@
              </fieldset>
 
                   <button class="pre back">Previous</button>
-                  <button class="s">Submit</button>
+                  <button id="submit">Submit</button>
              </div>
-               
-                
-                       
-             
-        
     </div>
     <script src="userdata.js">
     </script>
