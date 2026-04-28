@@ -9,6 +9,7 @@ let w = document.getElementById("welcome");
  let n = document.querySelectorAll(".no");
  let history = []; //we create an array to store the history of the questions//
  let c=0;
+ 
  start.addEventListener("click", function(){
     start.style.display = "none";
     make.style.display = "none";
