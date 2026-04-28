@@ -14,7 +14,9 @@ let w = document.getElementById("welcome");
     make.style.display = "none";
     w.style.display = "block";
  q[0].style.display = "block"; });
+
  next.forEach(function(button) {
+
     button.addEventListener("click", function(){
         if (c < q.length - 1){
          history.push(c); 
@@ -72,26 +74,38 @@ add.forEach( b => {
     };            
 });
 });
-let back = document.querySelector(".back");
-back.addEventListener("click", function(){    
- if (history.length >= 2 ){
-    q[c].style.display = "none";
-    c = history.pop();
-    q[c].style.display = "block";}
+let back = document.querySelectorAll(".back");
+back.forEach(function(button) {
+    button.addEventListener("click", function(){    
+     if (history.length >= 1 ){
+        q[c].style.display = "none";
+        c = history.pop();
+        q[c].style.display = "block";}
+    });
 });
+let title = q[c].querySelector("#project-title").value;
+let description = q[c].querySelector("#project-description").value;
+let link = q[c].querySelector("#project-link").value;
 let submit = document.querySelector("#submit");
 submit.addEventListener("click", function(){
     const user ={
-      template: selectedTemplate,//declare the selected template variable gwe will set it when the user clicks on a template//
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      phone: document.getElementById("phone").value,
-     tagline: document.getElementById("tagline").value,
-     about: document.getElementById("about").value,
-     skills: [...document.querySelectorAll(".skills")].map(el => el.firstChild.textContent.trim()),
-     experience: [...document.querySelectorAll(".experience")].map(el => el.firstChild.textContent.trim()),
-     projects: [...document.querySelectorAll(".projects")].map(el => el.firstChild.textContent.trim()),
-     contact : [...document.querySelectorAll(".contact")].map(el => el.firstChild.textContent.trim()),
-     avatar: document.getElementById("pic").files[0] ? URL.createObjectURL(document.getElementById("pic").files[0]) : null
-    }
+      template: selectedTemplate,//declare the selected template variable we will set it when the user clicks on a template//
+      name: document.getElementById("user-name").value,
+      email: document.getElementById("user-email").value,
+      phone: document.getElementById("user-phone").value,
+     tagline: document.getElementById("user-tagline").value,
+     about: document.getElementById("user-about").value,
+    skills: [...document.querySelectorAll(".skill")].map(el => ({
+    name: el.firstChild.textContent.trim(),
+})),
+
+     experience: [...document.querySelectorAll(".user-experience")].map(el => el.firstChild.textContent.trim()),
+projects: [...document.querySelectorAll(".user-project")].map(el => ({
+  name: el.dataset.name,
+  description: el.dataset.description,
+  link: el.dataset.link,
+})),
+     contact : [...document.querySelectorAll(".user-contact")].map(el => el.firstChild.textContent.trim()),
+  avatar: document.getElementById("pic").files[0] || null,
+};
 ;});

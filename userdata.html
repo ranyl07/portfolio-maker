@@ -63,7 +63,6 @@
                 <fieldset>
                     <legend>Your skills</legend>
                   <input type="text" placeholder="Enter a skill" id="skill" >
-                  <input type="text" placeholder="skill level, describtion" id="skill-description">
                   <button class="add">add</button>
                   <div class="tags"></div>
                 </fieldset>
@@ -87,7 +86,7 @@
                 <fieldset>
                     <legend>Your Experience</legend>
                   <input type="text" placeholder="Enter your experience">
-                  <button class="add">add</button>
+                  <button class="add" type="button">add</button>
                   <div class="tags"></div>
                 </fieldset>
                 <button class="pre">Previous</button>
@@ -111,15 +110,16 @@
                 <fieldset class="appear">
                     <legend> Your Projects</legend>
                     <label>the title of your project</label><br>
-                 <input type="text" placeholder="Title"><br>
-                  <label for="Link">Enter your project link</label><br>
-                  <input type="url" id="Link" placeholder="https://makefolio.com">
-                  <label for="description">Enter a brief description</label><br>
-                  <input type="text" id="description" placeholder="Description">
-                  <button class="add">add</button>
+                 <input type="text" placeholder="Title" id="project-title">
+                  <label for="project-description">Enter a brief description</label><br>
+                  <input type="text" id="project-description">
+                  <label for="project-link">Enter your project link</label><br>
+                  <input type="url" id="project-link" placeholder="https://makefolio.com">
+                   <button class="add" type="button">add</button>
                   <div class="tags"></div>
+                </fieldset>
              </form>
-            </fieldset>
+          
             <button class="pre">Previous</button>
                       <button class="next">Next</button>
                      
@@ -139,15 +139,14 @@
                 <form>
                 <fieldset>
                     <legend> Your Contact</legend>
-                    <label>Enter your social links </label><br>
-                 <input type="url" placeholder="https://instgram.com/username">
-                  <button class="add">add</button>
-                  <div class="tags"></div>
+                    <label>Enter your social links</label><br>
+                 <input type="url" placeholder="https://instgram.com/username" >
+                  <div class="tags" id="user-contact"></div>
              </form>
-             
+             <button class="add" type="button">add</button>
              </fieldset>
 
-                  <button class="pre back">Previous</button>
+                  <button class="pre">Previous</button>
                   <button id="submit">Submit</button>
              </div>
     </div>
