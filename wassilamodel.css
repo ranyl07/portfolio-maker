@@ -51,10 +51,6 @@ header p{
  border-radius: 50%;
  border: solid var(--third--color);
 }
-.pic:hover {
-   
-
-}
   section {
   max-width: 1000px;
   margin: 40px ;
