@@ -109,4 +109,5 @@ projects: [...document.querySelectorAll(".user-project")].map(el => ({
      contact : [...document.querySelectorAll(".user-contact")].map(el => el.firstChild.textContent.trim()),
   avatar: document.getElementById("pic").files[0] || null,
 };
-;});
+;}
+   localStorage.setItem("user", JSON.stringify(user)););
