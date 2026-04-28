@@ -39,7 +39,7 @@ body{
   height:100vh;
   background:#e3cde0fe;
   color:#630458;
-  padding-top:60px; /* نحيت overflow:hidden */
+  padding-top:60px; 
 }
 
 .left{
