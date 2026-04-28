@@ -1,0 +1,130 @@
+:root{
+ --prim--color :#893941;
+ --second--color:#cc8a94; 
+ --third--color:#D4D994;
+  --fourth--color:#5E6625;}
+  
+  header {
+ max-width: 1000px;
+  margin: 50px ;
+  background-color: var(--second--color);
+  text-align: center;
+  color: var(--fourth--color);
+  padding: 70px ;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px var(--prim--color);
+}
+
+ .name:hover {
+  color:var(--third--color);
+  letter-spacing: 0.7px;
+  transition: 0.6s ;
+}
+.nom{
+  color: #893941;
+}
+header p{
+ font-size: 40px;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-bottom: 2px;
+}
+ header h3{
+  color: var(--third--color);
+ font-family:Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: 30px;
+ }
+.btn {
+ background-color: var(--third--color);
+ color:var(--fourth--color);
+ padding: 15px ;
+ border-radius: 20px;
+ font-size: 15px;
+  margin-top: 10px;
+  }
+.btn:hover {
+  background-color: var(--prim--color);
+  color: var(--third--color);
+}
+ header img {
+ width: 150px;
+ height: 150px;
+ border-radius: 50%;
+ border: solid var(--third--color);
+}
+.pic:hover {
+   
+
+}
+  section {
+  max-width: 1000px;
+  margin: 40px ;
+  background-color: var(--third--color);
+  padding: 70px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px var(--fourth--color);
+ }
+ 
+ section h1 {
+ font-family: Arial, Helvetica, sans-serif;
+ color: var(--prim--color);
+ text-align: center;
+ }
+ section h1{
+   color:var(--prim--color);
+ }
+ section p{
+  text-align: center;
+  color: var(--fourth--color);
+ }
+ .projects {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+
+.project {
+  flex: 1;
+  text-align: center;
+  background:var(--fourth--color);
+  color: var(--third--color);
+  border-radius: 20px;
+  padding: 30px ;
+  box-shadow: 0 2px 10px var(--fourth--color);
+  transition: 0.2s;
+}
+
+.project:hover {
+  transform: translateY(4px);
+  box-shadow: 0 2px 10px var(--third--color);
+}
+
+.btnn {
+ background-color: var(--prim--color);
+ color:var(--third--color);
+ padding: 15px ;
+ border-radius: 20px;
+
+  }
+.btnn:hover {
+  max-height: 50px;
+  background-color: var(--second--color);
+  color: var(--fourth--color);
+}
+.clink {
+  background: var(--fourth--color); 
+  color: var(--third--color);
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  padding: 10px ;
+  margin-bottom: 16px;
+  transition: background 0.2s;
+  display: block;
+   font-size: 20px;
+  text-decoration: none;
+}
+.clink:hover{
+  background-color: var(--second--color);
+}
