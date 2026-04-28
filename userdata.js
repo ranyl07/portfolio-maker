@@ -82,7 +82,7 @@ back.addEventListener("click", function(){
 let submit = document.querySelector("#submit");
 submit.addEventListener("click", function(){
     const user ={
-      template: selectedTemplate,
+      template: selectedTemplate,//declare the selected template variable gwe will set it when the user clicks on a template//
       name: document.getElementById("name").value,
       email: document.getElementById("email").value,
       phone: document.getElementById("phone").value,
