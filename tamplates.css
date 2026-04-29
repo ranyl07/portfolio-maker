@@ -59,10 +59,10 @@ body{
    color: var(--prim--color);
 }
 .templates {
-  display: flex;           /* switch from grid to flex */
-  flex-wrap: wrap;         /* wrap to next line if needed */
-  justify-content: center; /* center the cards */
-  gap: 30px;               /* space between cards */
+  display: flex;         
+  flex-wrap: wrap;        
+  justify-content: center; 
+  gap: 30px;               
   padding: 20px;
   margin: 20px auto;
 }
