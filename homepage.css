@@ -17,7 +17,7 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 200px;
+  gap: 20px;
 }
 
 .head {

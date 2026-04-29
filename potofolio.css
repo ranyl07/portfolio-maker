@@ -219,3 +219,26 @@ em{
   z-index: 9999;
   transition: opacity 0.2s ease;
 }
+.scroll-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+
+  background: rgba(41, 2, 67, 0.6);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 50%;
+
+  z-index: 10;
+
+  transition: 0.3s;
+}
+.scroll-btn:hover {
+  transform: translateY(-50%) scale(1.2);
+  background: rgba(41, 2, 67, 0.9);
+}

@@ -31,7 +31,7 @@
 
 </header>
 </header>
-
+<button class="scroll-btn" onclick="scrollTopPage()">⬆</button>
 <section class="A">
 
   <div class="hero">
@@ -142,8 +142,14 @@
 
     }, 150);
   }
+  function scrollTopPage() {
+  window.scrollTo({
+    top: 250,
+    behavior: "smooth"
+  });
+}
 </script>
-</script>
-</script>
+
+
 </body>
 </html>
