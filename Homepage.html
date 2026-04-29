@@ -34,8 +34,8 @@
     <section id="portfolio" class="Portfolio">
 
   <h1 class="modls">Our Models</h1>
-  <button class="scroll-btn left" onclick="scrollLeft()">⬅</button>
-  <button class="scroll-btn right" onclick="scrollRight()">➡</button>
+  <button class="scroll-btn left" onclick="scrollCardsLeft()">⬅</button>
+  <button class="scroll-btn right" onclick="scrollCardsRight()">➡</button>
 
   
   <div class="card-container" id="cardContainer">
@@ -78,7 +78,7 @@
                 <p>
                     We are a group of students and young developers passionate about web design and development.
                     This portfolio platform was created as part of our learning journey to combine creativity and
-                    technical skills into one practical project.
+                    technical skills into one practical project.....
                 </p>
 
                 <a href="about-us.html">
@@ -95,19 +95,20 @@
 <script>
 const container = document.getElementById("cardContainer");
 
-function scrollLeft() {
+function scrollCardsLeft() {
   container.scrollBy({
     left: -300,
     behavior: "smooth"
   });
 }
 
-function scrollRight() {
+function scrollCardsRight() {
   container.scrollBy({
     left: 300,
     behavior: "smooth"
   });
 }
 </script>
+
 </body>
 </html>
