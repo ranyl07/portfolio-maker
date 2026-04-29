@@ -2,8 +2,8 @@
  --prim--color :#893941;
  --second--color:#cc8a94; 
  --third--color:#D4D994;
-  --fourth--color:#5E6625;
-  header {
+  --fourth--color:#5E6625;}
+header {
  max-width: 1000px;
   margin: 50px ;
   background-color: var(--second--color);
@@ -44,16 +44,11 @@ header p{
   background-color: var(--prim--color);
   color: var(--third--color);
 }
- header img {
+ img {
  width: 150px;
  height: 150px;
  border-radius: 50%;
- border: solid var(--third--color);
-}
-.pic:hover {
-   
-
-}
+ border: solid var(--third--color) 4px;}
   section {
   max-width: 1000px;
   margin: 40px ;
@@ -104,7 +99,7 @@ header p{
  padding: 15px ;
  border-radius: 20px;
 
-  }
+}
 .btnn:hover {
   max-height: 50px;
   background-color: var(--second--color);
@@ -119,7 +114,7 @@ header p{
   border-radius: 10px;
   padding: 10px ;
   margin-bottom: 16px;
-  transition: background 0.2s;
+  background: transition 0.2s;
   display: block;
    font-size: 20px;
   text-decoration: none;
@@ -127,15 +122,3 @@ header p{
 .clink:hover{
   background-color: var(--second--color);
 }
-
-
-
-
-
-
-
-
-
-
-
-

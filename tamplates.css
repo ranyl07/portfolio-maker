@@ -1,3 +1,10 @@
+:root{
+ --prim--color : rgb(36,36,58);
+ --second--color:#534950; /*font color*/
+ --third--color:#c3b7be;
+  --fourth--color:#0A1F2E;
+}
+
 body {
   background: linear-gradient(135deg, #0a0f0a, #ab7ea8);
   color: white;
@@ -6,6 +13,7 @@ body {
   flex-direction: column;
   gap: 20px;
 }
+
 .head {
   display: flex;
   justify-content: space-between;
@@ -14,8 +22,6 @@ body {
   padding: 0px 40px;
   background: linear-gradient(90deg, #15121239, #7352943f);
    box-shadow: 0 10px 25px rgba(15, 3, 38, 0.4);
-
-
 }
 
 .logo {
@@ -25,10 +31,9 @@ body {
 
 nav {
   background: rgba(31, 14, 24, 0.692);
-  padding: 10px 100px;
+  padding: 20px 100px;
   border-radius: 10px;
 }
-
 nav ul {
   display: flex;
   list-style: none;
@@ -46,6 +51,13 @@ nav ul li a:hover {
   color: #c58cff;
 }
 
+body{
+   text-align: center;
+   margin: 10px;
+   padding: 30px;
+   background: linear-gradient(to right, var(--fourth--color), var(--third--color), #bd8fb0, var(--third--color), var(--fourth--color));
+   color: var(--prim--color);
+}
 .templates {
   display: flex;           /* switch from grid to flex */
   flex-wrap: wrap;         /* wrap to next line if needed */
