@@ -104,7 +104,7 @@ submit.addEventListener("click", function(){
       phone: document.getElementById("user-phone").value,
      tagline: document.getElementById("user-tagline").value,
      about: document.getElementById("user-about").value,
-      skills: [...document.querySelectorAll(".skill")].map(el => ({
+      skills: [...document.querySelectorAll(".skills")].map(el => ({
        name: el.firstChild.textContent.trim(),
          })
 ),
@@ -119,3 +119,4 @@ submit.addEventListener("click", function(){
   avatar: document.getElementById("pic").files[0] || null,
 };
 ;});
+  
