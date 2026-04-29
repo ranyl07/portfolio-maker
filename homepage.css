@@ -33,12 +33,12 @@ body {
 }
 
 .logo {
-  width:200px;
+  width:300px;
 }
 
 nav {
   background: rgba(31, 14, 24, 0.692);
-  padding: 10px 100px;
+  padding: 20px 100px;
   border-radius: 10px;
 }
 
@@ -101,7 +101,7 @@ nav ul li a:hover {
 
 .btn-p:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(140, 80, 255, 0.4);
+  box-shadow: 0 10px 25px rgba(72, 22, 165, 0.4);
 }
 
 .Portfolio {
@@ -110,12 +110,11 @@ nav ul li a:hover {
   position: relative;
   text-align: center;
   display: inline;
-  background-color: #af78ac1d;
-  box-shadow: 0 10px 25px rgba(7, 7, 12, 0.648);
+  background-color: #a994a81d;
 
 }
 .Portfolio h1{
-  background: linear-gradient(90deg, #afa1bb, #5a268e);
+  background: linear-gradient(90deg, #5b50503d, #21083a9d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-style: normal;
@@ -123,7 +122,7 @@ nav ul li a:hover {
   transition: 0.3s;
   font: bold;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif Arial, sans-serif;
-   text-align: center;
+  text-align: center;
   font-size: 40px;
   margin-bottom: 30px;
 }
@@ -270,5 +269,3 @@ nav ul li a:hover {
   width: 300px;
   border-radius: 20px;
 }
-
-

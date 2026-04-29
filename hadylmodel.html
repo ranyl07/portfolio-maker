@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hadyl's model</title>
-    <link rel="stylesheet" href="model.css">
+    <link rel="stylesheet" href="hadylmodel.css">
 </head>
 <body>
      <div class="parent">
@@ -18,32 +18,32 @@
             </ul>
         </nav>
          <section id="1"><div class="header">
-            <h1 id="name"> {{ Name or logo }}</h1>
-            <em>{{"tagline"}}</em>
+            <h1 id="name"> Name</h1>
+            <em id="tagline">"tagline"</em>
         </div>        
         <div class="discreption">
             <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Your photo" id="avatar" class="child">
             <div class="s">
-                <h2> {{About Me}} </h2>
-            <p class="about">{{small paragraph about your self }}</p>
+                <h2> About Me </h2>
+            <p id="about">small paragraph about your self</p>
             </div>
         </div> </section>
         <section id="2">
         <div class="skills">
-            <h2>{{My skills}}</h2>
+            <h2>My skills</h2>
             <ul>
-                <ul id="full">
+                <ul class="skills" id="full">
                     <li class="box">
-                         {{skill number 1}}
-                        <p class="display">{{"which level you reached with this skill"}}</p>
+                         skill number 1
+                        <p class="display">"which level you reached with this skill"</p>
                     </li>
                     <li class="box">
-                        {{skill number 2}}
-                        <p class="display">{{"which level you reached with this skill"}}</p>
+                        skill number 2
+                        <p class="display">"which level you reached with this skill"</p>
                     </li>
                     <li class="box">
-                        {{skill number 3}}
-                        <p class="display">{{"which level you reached with this skill"}}</p>     
+                        skill number 3
+                        <p class="display">"which level you reached with this skill"</p>     
                     </li> 
                 </ul>
             </ul>
@@ -52,50 +52,53 @@
         <section id="3">
             <div class="experience">
                 <h2>My experience</h2>
+               <div class="box"> 
+               <p id="experience">Describe your experience</p>  
+            </div>
                 
             </div>
         </section>
-        <sectin id="4">
+        <section id="4">
     <div class="projects">
         <h2>My Projects</h2>
-         <ul id="p">
-                <li class="boxs">{{Project 1}}
-                    <p class="display">{{discribe your project}}</p>
+         <ul class="projects" id="p">
+                <li class="boxs">Project 1
+                    <p class="display">Describe your project</p>
                 </li>
                 <li class="boxs">
-                    {{Project 2}}
+                    Project 2
                     <p class="display">
-                        {{ discribe your project}}
-                        </p>
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+                        Describe your project
+                    </p>
+                    <a href="https://images.unsplash.com/photo-1498050108023-c5249f4df085" target="_blank"></a>
                 </li>
-                <li class="boxs">{{Project 3}}
-                    <p class="display">{{discribe your project}}</p>
-                    <img src="https://picsum.photos/300/180">
+                <li class="boxs">Project 3
+                    <p class="display">Describe your project</p>
+                 
                 </li>
-                 <li class="boxs"> {{Project 4}}
-                    <p class="display"> {{discribe your project , a web that helps you to make portfolio}}</p><!--shows up when the box is hovered-->
-                    <img src="https://picsum.photos/300/180">
+                 <li class="boxs"> Project 4
+                    <p class="display"> Describe your project</p><!--shows up when the box is hovered-->
                 </li>
         </ul>
     </div>
-    </sectin>
+    </section>
     <section id="5">
     <div class="contact">
-        <h2> {{My contact}} </h2>
+        <h2> My contact </h2>
         <ul class="c">
-            <li class="link"> <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="email" width="24" class="logo"></a></li><!--add icon links-->
+            <li class="link"> <a href="mailto:you@email.com" id="email"><img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="email" width="24" class="logo"></a></li><!--add icon links-->
             <li class="link">
-                <a  href="#">
+                <a  href="#" id="linkedin">
                     <img src="https://cdn.prod.website-files.com/6479b8d98bf5dcb4a69c4f31/6493999d57ad8123b314b6cf_linkedin%20(1).svg" alt="LinkedIn Logo"  width="24" class="logo"></a>
                  </li>
                 <li class="link">
-                    <a href="#">
-                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="phone" width="24" id="phone" class="logo">
+                    <a href="#" id="phone">
+                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="phone" width="24" class="logo">
                 </li>
         </ul>
     </div>
     </div>
     </section>
+    <script src="filltemplate.js"></script>
 </body>
 </html>

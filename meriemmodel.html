@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="meriemmodel.css">
+</head>
+<body>
+
+<div class="container">
+
+    <aside class="sidebar">
+        <div class="profile">
+            <div class="circle" id="pic">{{Your Picture}}</div>
+        </div>
+
+        <section>
+            <h2>{{ABOUT ME}}</h2>
+            <p id="about">Short paragraph about yourself...</p>
+        </section>
+
+        <section class="skills">
+            <h2>{{SKILLS}}</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+
+        <section class="contact">
+            <h2>{{CONTACT}}</h2>
+            <p id="phone">📞 +213 *** *** ***</p>
+            <p>💼 linkedin.com/in/username</p>
+            <p id="email">📧 email@example.com</p>
+        </section>
+    </aside>
+
+    <main class="content">
+
+        <header>
+            <h1 id="name">{{YOUR NAME}}</h1>
+            <p id="tagline">{{Web Developer / CS Student / Designer}}</p>
+        </header>
+
+        <section class="projects">
+            <h2>{{EXPERIENCE}}</h2>
+
+            <div class="card">
+                <h3>{{Project1}}</h3>
+                <p>Short description</p>
+                <ul>
+                    <li>What you built</li>
+                    <li>Technologies used</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>{{Project2}}</h3>
+                <p>Short description</p>
+                <ul>
+                    <li>What you built</li>
+                    <li>Technologies used</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>{{EDUCATION}}</h2>
+
+            <div class="card">
+                <h3>University Name</h3>
+                <span>start year - end year</span>
+            </div>
+
+            <div class="card">
+                <h3>Course / Certification</h3>
+                <span>Platform</span>
+                <br>
+                <span>Year</span>           
+            </div>
+        </section>
+
+    
+        <button onclick="chooseTemplate(1)">use this model</button>
+
+    </main>
+
+</div>
+
+</body>
+</html>
