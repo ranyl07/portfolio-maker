@@ -1,24 +1,23 @@
 let q = document.querySelectorAll(".fill");
 let w = document.getElementById("welcome");
  //we bring all question divs as an array//
- let next = document.querySelectorAll(".next");
- let start = document.querySelector(".Start");
- let make = document.querySelector("#make");
- let pre = document.querySelectorAll(".pre");
- let y = document.querySelectorAll(".btn");
- let n = document.querySelectorAll(".no");
- let history = []; //we create an array to store the history of the questions//
- let c=0;
+let next = document.querySelectorAll(".next");
+let start = document.querySelector(".Start");
+let make = document.querySelector("#make");
+let pre = document.querySelectorAll(".pre");
+let y = document.querySelectorAll(".btn");
+let n = document.querySelectorAll(".no");
+let history = []; //we create an array to store the history of the questions//
+let c=0;
  
- start.addEventListener("click", function(){
+start.addEventListener("click", function(){
     start.style.display = "none";
     make.style.display = "none";
     w.style.display = "block";
- q[0].style.display = "block"; });
+    q[0].style.display = "block"; }); 
+next.forEach(function(button) {
 
- next.forEach(function(button) {
-
-    button.addEventListener("click", function(){
+button.addEventListener("click", function(){
         if (c < q.length - 1){
          history.push(c); 
         q[c].style.display = "none";
@@ -64,16 +63,25 @@ add.forEach( b => {
           let x = document.createElement("div");
           let y = document.createElement("button");
            x.textContent = input.value;
-           x.setAttribute("class", "skill");
            y.textContent = "🗑️";
+        if (b.id.contains("skill-add")){
+           x.setAttribute("class", "skill");}
+        else if (b.id.contains("experience-add")){
+           x.setAttribute("class", "user-experience");}
+        else if (b.id.contains("project-add")){
+           x.setAttribute("class", "user-project");}
+           x.dataset.title = q[c].querySelector("#project-title").value;
+           x.dataset.description = q[c].querySelector("#project-description").value;
+           x.dataset.link = q[c].querySelector("#project-link").value;}
+        else if (b.id.contains("contact-add")){
+           x.setAttribute("class", "user-contact");}
            y.setAttribute("class", "delete");
            q[c].querySelector(".tags").appendChild(x);
            x.appendChild(y);
            y.addEventListener("click", function(){
            x.remove();});
            input.value = "";
-    };            
-});
+    });       
 });
 let back = document.querySelectorAll(".back");
 back.forEach(function(button) {
@@ -96,15 +104,16 @@ submit.addEventListener("click", function(){
       phone: document.getElementById("user-phone").value,
      tagline: document.getElementById("user-tagline").value,
      about: document.getElementById("user-about").value,
-    skills: [...document.querySelectorAll(".skill")].map(el => ({
-    name: el.firstChild.textContent.trim(),
-})),
+      skills: [...document.querySelectorAll(".skill")].map(el => ({
+       name: el.firstChild.textContent.trim(),
+         })
+),
 
      experience: [...document.querySelectorAll(".user-experience")].map(el => el.firstChild.textContent.trim()),
-projects: [...document.querySelectorAll(".user-project")].map(el => ({
-  name: el.dataset.name,
-  description: el.dataset.description,
-  link: el.dataset.link,
+     projects: [...document.querySelectorAll(".user-project")].map(el => ({
+      name: el.dataset.title,
+     description: el.dataset.description,
+     link: el.dataset.link,
 })),
      contact : [...document.querySelectorAll(".user-contact")].map(el => el.firstChild.textContent.trim()),
   avatar: document.getElementById("pic").files[0] || null,
