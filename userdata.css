@@ -15,6 +15,9 @@
 -webkit-background-clip: text;
 background-clip: text;
   }
+  .logo {
+  width:200px;
+}
 .fill {
  width:420px;
  padding: 40px;

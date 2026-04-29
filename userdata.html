@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio maker</title>
     <link rel="stylesheet" href="userdata.css">
+        <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
     <div class="Q">
@@ -59,11 +60,11 @@
              <button class="pre">Previous</button>
       
              </div>
-             <div  class="fill" id="skill-add">
+             <div  class="fill">
                 <fieldset>
                     <legend>Your skills</legend>
                   <input type="text" placeholder="Enter a skill" id="skill" >
-                  <button class="add">add</button>
+                  <button class="add" id="skill-add">add</button>
                   <div class="tags"></div>
                 </fieldset>
                 <button class="pre">Previous</button>
@@ -82,11 +83,11 @@
              <button class="pre back" >Previous</button>
                       
              </div>
-             <div  class="fill" id="experience-add">
+             <div  class="fill">
                 <fieldset>
                     <legend>Your Experience</legend>
-                  <input type="text" placeholder="Enter your experience">
-                  <button class="add" type="button">add</button>
+                  <input type="text" placeholder="Enter your experience" id="experience-title">
+                  <button class="add" type="button" id="experience-add">add</button>
                   <div class="tags"></div>
                 </fieldset>
                 <button class="pre">Previous</button>
@@ -105,8 +106,7 @@
                 <button class="pre back" >Previous</button>
                       
             </div>
-            <div class="fill" id="project-add">
-                <form>
+            <div class="fill">
                 <fieldset class="appear">
                     <legend> Your Projects</legend>
                     <label>the title of your project</label><br>
@@ -115,10 +115,10 @@
                   <input type="text" id="project-description">
                   <label for="project-link">Enter your project link</label><br>
                   <input type="url" id="project-link" placeholder="https://makefolio.com">
-                   <button class="add" type="button">add</button>
+                   <button class="add" type="button" id="project-add">add</button>
                   <div class="tags"></div>
                 </fieldset>
-             </form>
+             
           
             <button class="pre">Previous</button>
                       <button class="next">Next</button>
@@ -132,18 +132,18 @@
                       <button id="true" class="btn"> yes </button>
                       <button class="no"> No </button>
                 </fieldset>
-                <button class="pre back" >Previous</button>
+                <button class="pre back">Previous</button>
                       
             </div>
-             <div class="fill" id="contact-add">
-                <form>
+             <div class="fill">
+            
                 <fieldset>
                     <legend> Your Contact</legend>
                     <label>Enter your social links</label><br>
                  <input type="url" placeholder="https://instgram.com/username" >
                   <div class="tags" id="user-contact"></div>
-             </form>
-             <button class="add" type="button">add</button>
+         
+             <button class="add" type="button" id="contact-add">add</button>
              </fieldset>
 
                   <button class="pre">Previous</button>

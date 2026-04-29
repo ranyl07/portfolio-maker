@@ -4,6 +4,30 @@
  --third--color:#c3b7be;
   --fourth--color:#0A1F2E;
 }
+nav {
+  background: rgba(31, 14, 24, 0.692);
+  padding: 20px 100px;
+  border-radius: 10px;
+}
+.logo {
+  width:200px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ddd;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #c58cff;
+}
 body{
     
    text-align: center;

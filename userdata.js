@@ -64,25 +64,24 @@ add.forEach( b => {
           let y = document.createElement("button");
            x.textContent = input.value;
            y.textContent = "🗑️";
-        if (b.id.contains("skill-add")){
+        if (b.id === "skill-add"){
            x.setAttribute("class", "skill");}
-        else if (b.id.contains("experience-add")){
+        else if (b.id === "experience-add"){
            x.setAttribute("class", "user-experience");}
-        else if (b.id.contains("project-add")){
-           x.setAttribute("class", "user-project");}
+        else if (b.id === "project-add"){
+           x.setAttribute("class", "user-project");
            x.dataset.title = q[c].querySelector("#project-title").value;
            x.dataset.description = q[c].querySelector("#project-description").value;
            x.dataset.link = q[c].querySelector("#project-link").value;}
-        else if (b.id.contains("contact-add")){
+        else if (b.id === "contact-add"){
            x.setAttribute("class", "user-contact");}
            y.setAttribute("class", "delete");
            q[c].querySelector(".tags").appendChild(x);
            x.appendChild(y);
            y.addEventListener("click", function(){
            x.remove();});
-           input.value = "";
-    });       
-});
+           input.value = ""; 
+      }  });}); 
 let back = document.querySelectorAll(".back");
 back.forEach(function(button) {
     button.addEventListener("click", function(){    
@@ -92,31 +91,27 @@ back.forEach(function(button) {
         q[c].style.display = "block";}
     });
 });
-let title = q[c].querySelector("#project-title").value;
-let description = q[c].querySelector("#project-description").value;
-let link = q[c].querySelector("#project-link").value;
+selectedTemplate="hadylmodel.html";
 let submit = document.querySelector("#submit");
 submit.addEventListener("click", function(){
-    const user ={
-      template: selectedTemplate,//declare the selected template variable we will set it when the user clicks on a template//
+    const user = {
+      template: selectedTemplate,
       name: document.getElementById("user-name").value,
       email: document.getElementById("user-email").value,
       phone: document.getElementById("user-phone").value,
-     tagline: document.getElementById("user-tagline").value,
-     about: document.getElementById("user-about").value,
-      skills: [...document.querySelectorAll(".skills")].map(el => ({
-       name: el.firstChild.textContent.trim(),
-         })
-),
-
-     experience: [...document.querySelectorAll(".user-experience")].map(el => el.firstChild.textContent.trim()),
-     projects: [...document.querySelectorAll(".user-project")].map(el => ({
-      name: el.dataset.title,
-     description: el.dataset.description,
-     link: el.dataset.link,
-})),
-     contact : [...document.querySelectorAll(".user-contact")].map(el => el.firstChild.textContent.trim()),
-  avatar: document.getElementById("pic").files[0] || null,
-};
-;});
+      tagline: document.getElementById("user-tagline").value,
+      about: document.getElementById("user-about").value,
+      skills: [...document.querySelectorAll(".skill")].map(el => el.firstChild.textContent.trim()),
+      experience: [...document.querySelectorAll(".user-experience")].map(el => el.firstChild.textContent.trim()),
+      projects: [...document.querySelectorAll(".user-project")].map(el => ({
+        name: el.dataset.title,
+        description: el.dataset.description,
+        link: el.dataset.link,
+      })),
+      socialLinks: [...document.querySelectorAll(".user-contact")].map(el => el.firstChild.textContent.trim()),
+      avatar: document.getElementById("user-pic").files[0] || null,
+    };
+    localStorage.setItem("userData", JSON.stringify(user));
+    window.location.href = user.template;
+});
   
