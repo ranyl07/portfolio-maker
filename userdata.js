@@ -99,17 +99,19 @@ submit.addEventListener("click", function(){
       name: document.getElementById("user-name").value,
       email: document.getElementById("user-email").value,
       phone: document.getElementById("user-phone").value,
-      tagline: document.getElementById("user-tagline").value,
-      about: document.getElementById("user-about").value,
-      skills: [...document.querySelectorAll(".skill")].map(el => el.firstChild.textContent.trim()),
-      experience: [...document.querySelectorAll(".user-experience")].map(el => el.firstChild.textContent.trim()),
-      projects: [...document.querySelectorAll(".user-project")].map(el => ({
-        name: el.dataset.title,
-        description: el.dataset.description,
-        link: el.dataset.link,
-      })),
-      socialLinks: [...document.querySelectorAll(".user-contact")].map(el => el.firstChild.textContent.trim()),
-      avatar: document.getElementById("user-pic").files[0] || null,
-    };
-});
-  
+     tagline: document.getElementById("user-tagline").value,
+     about: document.getElementById("user-about").value,
+    skills: [...document.querySelectorAll(".skill")].map(el => ({
+    name: el.firstChild.textContent.trim(),
+})),
+
+     experience: [...document.querySelectorAll(".user-experience")].map(el => el.firstChild.textContent.trim()),
+projects: [...document.querySelectorAll(".user-project")].map(el => ({
+  name: el.dataset.name,
+  description: el.dataset.description,
+  link: el.dataset.link,
+})),
+     contact : [...document.querySelectorAll(".user-contact")].map(el => el.firstChild.textContent.trim()),
+  avatar: document.getElementById("pic").files[0] || null,
+};
+;});
