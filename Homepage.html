@@ -1,52 +1,113 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Our Page</title>
-    </head>
-    <body>
-        <header>
-            <
-            <h1>My Blog</h1>
-            <img src="#" alt="image">
-             <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About us</a></li>
-                    <li><a href="#">Portofolio</a></li>
-                </ul>
-            </nav>
-        </header>
-        <section class="Welcome">
-            <div class="Welcome-cntn">
-               <h1>Welcome to <em>Makefolio</em></h1>
-               <h3 class="Welcome-p">a space where your ideas become your identity</h3>
-               <button class="btn-p" >Discover Our Portfolio</button>
-            </div>
-        </section>
-        <section class="Porr">
-            <div class="Portfolio-service">
-                <h1>Our Portofolio</h1>
-            </div>
-            <div>
-            <a class="card">
-             <div>
-              <img src="#" alt="Portfolio">
-              <h3 class="Portfolio-cont3">content</h3>
-              <p class="Portfolio-contp">content</p>
-             </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Makefolio</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+
+<body>
+
+    <header class="head">
+        <img class="logo" src="img/M.png" alt="Logo">
+
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="Welcome">
+        <div class="Welcome-cntn">
+            <h1>Welcome to <em>Makefolio</em></h1>
+            <h3 class="Welcome-p">A space where your ideas become your identity</h3>
+
+            <a href="#portfolio">
+                <button class="btn-p">Discover Our Portfolio</button>
             </a>
-            </div>
-        </section>
-        <section class="Aboutus">
-            <div>
-                <h1>About us </h1>
-                <img src="#" alt="descriptin">
-                <p class="Aboutusp">text</p>
-                <button class="abtus">Read M</button>
+        </div>
+    </section>
+
+    <section id="portfolio" class="Portfolio">
+
+  <h1 class="modls">Our Models</h1>
+  <button class="scroll-btn left" onclick="scrollLeft()">⬅</button>
+  <button class="scroll-btn right" onclick="scrollRight()">➡</button>
+
+  
+  <div class="card-container" id="cardContainer">
+
+    <div class="card">
+      <a href="hadylmodel.html" >
+       <img src="img/design1.png" alt="project">
+      <div class="overlay">
+        <h3>Project 1</h3> 
+      </a>
+      </div>
+    </div>
+
+    <div class="card">
+       <a href="portfolio.html" >
+        <img src="img/design2.png" alt="project">
+      <div class="overlay">
+        <h3>Project 2</h3>
+      </a>
+      </div>
+    </div>
+
+    <div class="card">
+       <a href="potofolio.html" >
+        <img src="img/design3.png" alt="project">
+      <div class="overlay">
+        <h3>Project 3</h3>
+      </div>
+      </a>
+    </div>
+  </div>
+
+</section>
+
+    <section class="Aboutus">
+        <div class="about-container">
+
+            <div class="about-text">
+                <h1>About Us</h1>
+                <p>
+                    We are a group of students and young developers passionate about web design and development.
+                    This portfolio platform was created as part of our learning journey to combine creativity and
+                    technical skills into one practical project.
+                </p>
+
+                <a href="about-us.html">
+                    <button class="abtus">Learn More</button>
+                </a>
             </div>
 
-        </section>
+            <div class="about-image">
+                <img src="img/img2.png" alt="Design">
+            </div>
 
-    </body>
+        </div>
+    </section>
+<script>
+const container = document.getElementById("cardContainer");
+
+function scrollLeft() {
+  container.scrollBy({
+    left: -300,
+    behavior: "smooth"
+  });
+}
+
+function scrollRight() {
+  container.scrollBy({
+    left: 300,
+    behavior: "smooth"
+  });
+}
+</script>
+</body>
 </html>
