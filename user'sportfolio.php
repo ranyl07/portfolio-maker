@@ -84,51 +84,14 @@ $conn->close();
     </div>
 
 </div>
-folio · PHP
-Copy
-
-<?php
-// delete_portfolio.php — called via fetch() from JS, not on page load
- 
-header('Content-Type: application/json');
- 
-$conn = new mysqli("localhost", "root", "", "portfolio");
- 
-if ($conn->connect_error) {
-    echo json_encode(["success" => false, "error" => "Connection failed: " . $conn->connect_error]);
-    exit;
-}
- 
-// Get the id to delete from POST body
-$input = json_decode(file_get_contents("php://input"), true);
-$id = isset($input['id']) ? (int) $input['id'] : 0;
- 
-if ($id <= 0) {
-    echo json_encode(["success" => false, "error" => "Invalid ID"]);
-    exit;
-}
- 
-// Delete skills first (foreign key dependency)
-$stmt = $conn->prepare("DELETE FROM skill WHERE id_portfolio = ?");
-$stmt->bind_param("i", $id);
-$stmt->execute();
-$stmt->close();
- 
-// Delete user record
-$stmt = $conn->prepare("DELETE FROM user WHERE id_portfolio = ?");
-$stmt->bind_param("i", $id);
-$stmt->execute();
-$stmt->close();
- 
-// Delete portfolio record
-$stmt = $conn->prepare("DELETE FROM user_portfolio WHERE id_portfolio = ?");
-$stmt->bind_param("i", $id);
-$stmt->execute();
-$stmt->close();
- 
-$conn->close();
- 
-echo json_encode(["success" => true]);?>
+ <?<php 
+$conn= new mysqli("localhost","root","",portfolio);
+$id=$_GET['id'];
+$user=$conn->query("SELECT*FROM user WHERE id=$id")->fetch_assoc();
+$portfolio=$conn->query("SELECT*FROM userportfolio WHERE id=$id")->fetch_assoc();
+$projects=$conn->query("SELECT*FROM project WHERE user_id=$id");
+$socials=$conn->query("SELECT*FROM social_link WHERE user_id=$id");
+?>
 
 <script>
     let portfolioData = <?php echo json_encode($data); ?>;
