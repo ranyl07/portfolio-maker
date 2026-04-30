@@ -115,3 +115,6 @@ img{
    flex-shrink: 0;  
   left: 0;
 }
+iframe :hover {
+  color: gray;
+}

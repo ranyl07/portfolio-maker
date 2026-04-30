@@ -1,3 +1,66 @@
+<?php
+// ✅ 1. include homepage.php first — brings $conn
+include "homepage.php";
+
+// ✅ 2. Process form at top before any HTML
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    // Get form data
+    $name       = htmlspecialchars(trim($_POST['name']));
+    $email      = htmlspecialchars(trim($_POST['email']));
+    $phone      = htmlspecialchars(trim($_POST['phone']));
+    $linkedin   = htmlspecialchars(trim($_POST['linkedin']));
+    $about      = htmlspecialchars(trim($_POST['about']));
+    $tagline    = htmlspecialchars(trim($_POST['tagline']));
+    $skill      = htmlspecialchars(trim($_POST['skill']));
+    $exp        = htmlspecialchars(trim($_POST['experience']));       // ✅ fixed name
+    $proj_title = htmlspecialchars(trim($_POST['project_title']));
+    $proj_desc  = htmlspecialchars(trim($_POST['project_description'])); // ✅ fixed name
+    $proj_link  = htmlspecialchars(trim($_POST['project_link']));     // ✅ fixed name
+    $social     = htmlspecialchars(trim($_POST['social_link']));
+
+    // ✅ 3. Default photo value in case no photo uploaded
+    $photo = "";
+    if (isset($_FILES['photo']) && $_FILES['photo']['error'] === 0) {
+        $photo = uniqid() . "_" . $_FILES['photo']['name'];
+        move_uploaded_file($_FILES['photo']['tmp_name'], "uploads/" . $photo);
+    }
+
+    $stmt1 = $conn->prepare("
+        INSERT INTO user (user_name, email, phone_number, linkedin)
+        VALUES (?, ?, ?, ?)
+    ");
+    $stmt1->bind_param("ssss", $name, $email, $phone, $linkedin);
+    $stmt1->execute();
+
+    $user_id = $conn->insert_id;
+
+    $stmt2 = $conn->prepare("
+        INSERT INTO user_portfolio (user_id, about, tagline, avatar, skill_name, experience)
+        VALUES (?, ?, ?, ?, ?, ?)
+    ");
+    $stmt2->bind_param("isssss", $user_id, $about, $tagline, $photo, $skill, $exp);
+    $stmt2->execute();
+
+    $stmt3 = $conn->prepare("
+        INSERT INTO project (user_id, project_title, description, link)
+        VALUES (?, ?, ?, ?)
+    ");
+    $stmt3->bind_param("isss", $user_id, $proj_title, $proj_desc, $proj_link);
+    $stmt3->execute();
+
+    $stmt4 = $conn->prepare("
+        INSERT INTO social_link (user_id, platform_link)
+        VALUES (?, ?)
+    ");
+    $stmt4->bind_param("is", $user_id, $social);
+    $stmt4->execute();
+
+   
+    header("Location: userdata.php?id=" . $user_id);
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -170,7 +233,7 @@ $stmt1 = $conn->prepare("
     VALUES (?, ?, ?)
 ");
 $stmt1->bind_param("sss", $name, $email, $phone);
-$stmt1->execute();
+$stmt1->execute();                                                                                                                  
 
 // Get the user id that was just created
 $user_id = $conn->insert_id;
