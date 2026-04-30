@@ -83,6 +83,14 @@ echo $row['share_link'];
   </div>
 
 </div>
+ <?<php 
+$conn= new mysqli("localhost","root","",portfolio);
+$id=$_GET['id'];
+$user=$conn->query("SELECT*FROM user WHERE id=$id")->fetch_assoc();
+$portfolio=$conn->query("SELECT*FROM userportfolio WHERE id=$id")->fetch_assoc();
+$projects=$conn->query("SELECT*FROM project WHERE user_id=$id");
+$socials=$conn->query("SELECT*FROM social_link WHERE user_id=$id");
+?>
 
 <script>
 let portfolioData = <?php echo json_encode($data); ?>;
