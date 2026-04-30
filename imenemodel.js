@@ -20,26 +20,20 @@ const experience = [
 ];
 
 const education = [
-  { title: "University Name", field: "Computer Science", year: "2022 - 2025" },
-  { title: "High School", field: "Science", year: "2019 - 2022" }
+  { title: "University Name", field: "Computer Science", year: "2022 - 2025" }
 ];
 
 const certificates = [
-  { name: "Certificate 1", file: "#" },
-  { name: "Certificate 2", file: "#" }
+  { name: "Certificate 1", file: "#" }
 ];
 
 
 
-document.getElementById("username").innerText = user.name;
-document.getElementById("aboutText").innerText = portfolio.about;
+document.getElementById("name").innerText = user.name;
+document.getElementById("about").innerText = portfolio.about;
 
-
-
-document.getElementById("skillsBox").innerHTML =
+document.getElementById("skills").innerHTML =
 skills.map(s => `<span>${s}</span>`).join("");
-
-
 
 document.getElementById("projectsBox").innerHTML =
 projects.map(p => `
@@ -49,9 +43,7 @@ projects.map(p => `
   </div>
 `).join("");
 
-
-
-document.getElementById("expBox").innerHTML =
+document.getElementById("experience").innerHTML =
 experience.map(e => `
   <div class="card">
     <b>${e.title}</b> - ${e.company}
@@ -60,9 +52,7 @@ experience.map(e => `
   </div>
 `).join("");
 
-
-
-document.getElementById("eduBox").innerHTML =
+document.getElementById("education").innerHTML =
 education.map(e => `
   <div class="card">
     <b>${e.title}</b>
@@ -71,9 +61,7 @@ education.map(e => `
   </div>
 `).join("");
 
-
-
-document.getElementById("certBox").innerHTML =
+document.getElementById("certificates").innerHTML =
 certificates.map(c => `
   <div class="card">
     📜 ${c.name} <br>
@@ -81,15 +69,15 @@ certificates.map(c => `
   </div>
 `).join("");
 
-
-
-document.getElementById("contactBox").innerHTML = `
+document.getElementById("contact").innerHTML = `
   <p>📧 ${user.email}</p>
   <p>📞 ${user.phone}</p>
-`;
+  `;
 
-
-
-function scrollToSec(id){
+     function scrollToSec(id){
   document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-}
+     }
+
+  function chooseTemplate(id){
+  alert("Template selected: " + id);
+     }
