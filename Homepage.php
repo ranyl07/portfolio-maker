@@ -2,8 +2,8 @@
 <?php
 $server   = "localhost";
 $username = "root";
-$password = "web";
-$database = "makefolio";
+$password = "";
+$database = "portfolio";
 
 $conn = mysqli_connect($server, $username, $password, $database);
 
@@ -27,9 +27,9 @@ if (!$conn) {
 
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="Homepage.html">Home</a></li>
                 <li><a href="about.html">About portfolio</a></li>
-                <li><a href="templates.html">Generate</a></li>
+          
                 <li><a href="yours.html">Yours</a></li>
             </ul>
         </nav>
@@ -104,7 +104,8 @@ if (!$conn) {
             </div>
 
         </div>
-<?php
+    </section>
+    <?php
 $conn->query("INSERT INTO model (id_model, model_name) VALUES (1, 'hadylmodel')");
 $conn->query("INSERT INTO model (id_model, model_name) VALUES(2, 'imenemodel')");
 $conn->query("INSERT INTO model (id_model, model_name) VALUES(3, 'meriemmodel')");
@@ -113,7 +114,6 @@ $conn->query("INSERT INTO model (id_model, model_name) VALUES(5, 'wassilamodel')
 
 
 ?>
-    </section>
 <script>
 const container = document.getElementById("cardContainer");
 

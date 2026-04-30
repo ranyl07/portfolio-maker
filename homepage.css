@@ -7,16 +7,6 @@
 html{
     scroll-behavior: smooth;
 }
-body{
-    background: linear-gradient(to right, var(--fourth--color), var(--third--color), #bd8fb0, var(--third--color), var(--fourth--color));
-    color :#b1a8c4;
-    text-align: center;
-    font-family: Times,'Times New Roman', serif;
-    margin: 0;
-    padding:0 ;
-    text-shadow:  0 6px 10px black;
-    backdrop-filter: blur(8px);
-}
 ul{
     list-style-type : none;
     margin: 0;
@@ -145,6 +135,8 @@ nav ul li a:hover {
   font-size: 40px;
   margin-bottom: 30px;
 }
+
+
 .card-container {
   display: flex;
   gap: 20px;
@@ -152,9 +144,11 @@ nav ul li a:hover {
   scroll-behavior: smooth;
   padding: 20px;
 }
+
 .card-container::-webkit-scrollbar {
   display: none;
 }
+
 .card {
   position: relative;
   width: 600px;
@@ -239,7 +233,6 @@ nav ul li a:hover {
   background: linear-gradient(90deg, #5b50503d, #21083a9d);
   border-radius: 25px;
 }
-
 .about-container {
   display: flex;
   align-items: center;

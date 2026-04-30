@@ -1,11 +1,8 @@
 <?php
-// ✅ 1. include homepage.php first — brings $conn
-include "homepage.php";
 
-// ✅ 2. Process form at top before any HTML
+include "homepage.php";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    // Get form data
     $name       = htmlspecialchars(trim($_POST['name']));
     $email      = htmlspecialchars(trim($_POST['email']));
     $phone      = htmlspecialchars(trim($_POST['phone']));
@@ -13,13 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $about      = htmlspecialchars(trim($_POST['about']));
     $tagline    = htmlspecialchars(trim($_POST['tagline']));
     $skill      = htmlspecialchars(trim($_POST['skill']));
-    $exp        = htmlspecialchars(trim($_POST['experience']));       // ✅ fixed name
+    $exp        = htmlspecialchars(trim($_POST['experience']));
     $proj_title = htmlspecialchars(trim($_POST['project_title']));
-    $proj_desc  = htmlspecialchars(trim($_POST['project_description'])); // ✅ fixed name
-    $proj_link  = htmlspecialchars(trim($_POST['project_link']));     // ✅ fixed name
+    $proj_desc  = htmlspecialchars(trim($_POST['project_description']));
+    $proj_link  = htmlspecialchars(trim($_POST['project_link']));
     $social     = htmlspecialchars(trim($_POST['social_link']));
 
-    // ✅ 3. Default photo value in case no photo uploaded
     $photo = "";
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === 0) {
         $photo = uniqid() . "_" . $_FILES['photo']['name'];
