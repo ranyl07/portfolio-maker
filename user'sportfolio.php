@@ -1,3 +1,44 @@
+<?php
+$conn = new mysqli("localhost","root","","makefolio");
+
+
+$conn->query("DELETE FROM skill WHERE id_portfolio = (SELECT id_portfolio FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1)");
+
+$conn->query("DELETE FROM user WHERE id_portfolio = (SELECT id_portfolio FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1)");
+
+$conn->query("DELETE FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1");
+
+echo "deleted";
+?>
+
+<?php
+$conn = new mysqli("localhost","root","","makefolio");
+
+
+$result = $conn->query("SELECT id_portfolio FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1");
+
+$row = $result->fetch_assoc();
+$id = $row['id_portfolio'];
+
+
+$link = "http://localhost/project/portfolio.php?id=".$id;
+
+
+$conn->query("UPDATE user_portfolio SET share_link='$link' WHERE id_portfolio=$id");
+
+echo $link;
+?>
+
+<?php
+$conn = new mysqli("localhost","root","","makefolio");
+
+
+$result = $conn->query("SELECT share_link FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1");
+
+$row = $result->fetch_assoc();
+
+echo $row['share_link'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,45 +92,3 @@ let portfolioData = <?php echo json_encode($data); ?>;
 
 </body>
 </html>
-
-<?php
-$conn = new mysqli("localhost","root","","portfolio");
-
-
-$conn->query("DELETE FROM skill WHERE id_portfolio = (SELECT id_portfolio FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1)");
-
-$conn->query("DELETE FROM user WHERE id_portfolio = (SELECT id_portfolio FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1)");
-
-$conn->query("DELETE FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1");
-
-echo "deleted";
-?>
-
-<?php
-$conn = new mysqli("localhost","root","","portfolio");
-
-
-$result = $conn->query("SELECT id_portfolio FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1");
-
-$row = $result->fetch_assoc();
-$id = $row['id_portfolio'];
-
-
-$link = "http://localhost/project/portfolio.php?id=".$id;
-
-
-$conn->query("UPDATE user_portfolio SET share_link='$link' WHERE id_portfolio=$id");
-
-echo $link;
-?>
-
-<?php
-$conn = new mysqli("localhost","root","","portfolio");
-
-
-$result = $conn->query("SELECT share_link FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1");
-
-$row = $result->fetch_assoc();
-
-echo $row['share_link'];
-?>

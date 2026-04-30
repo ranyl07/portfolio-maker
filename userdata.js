@@ -91,7 +91,6 @@ back.forEach(function(button) {
         q[c].style.display = "block";}
     });
 });
-selectedTemplate="hadylmodel.html";
 let submit = document.querySelector("#submit");
 submit.addEventListener("click", function(){
     const user = {
