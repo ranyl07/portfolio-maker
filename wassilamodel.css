@@ -3,36 +3,6 @@
  --second--color:#cc8a94; 
  --third--color:#D4D994;
   --fourth--color:#5E6625;}
-
-  nav {
-    position: sticky;
-    background-color: var(--prim--color);
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    padding: 0 30px;
-    height: 60px;
-    border-radius: 7px;
-    box-shadow: 0 2px 20px var(--fourth--color);
-}
-.nav-links {
-    display: flex;
-    gap: 6px;
-}
- 
-.nav-links a {
-    color: var(--third--color);
-    text-decoration: none;
-    font-size: 14px;
-    padding: 7px 14px;
-    border-radius: 14px;
-    transition: background 0.2s, color 0.2s;
-}
-.nav-links a:hover {
-    background-color: var(--third--color);
-    color: var(--fourth--color);
-}
-  
   header {
  max-width: 1000px;
   margin: 50px ;
