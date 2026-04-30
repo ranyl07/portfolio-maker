@@ -142,7 +142,7 @@
     </div>
 
     <?php include "homepage.php"; 
-if ($server['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $name        = htmlspecialchars(trim($_POST['name']));
     $email       = htmlspecialchars(trim($_POST['email']));
@@ -164,7 +164,6 @@ if ($server['REQUEST_METHOD'] === 'POST') {
     }
 
     echo "✅ Data received!";
-     <?php
 // INSERT 1 — user
 $stmt1 = $conn->prepare("
     INSERT INTO user (user_name, email, phone_number)
@@ -199,7 +198,6 @@ $stmt4 = $conn->prepare("
 ");
 $stmt4->bind_param("s", $social);
 $stmt4->execute();
-?>
     $stmt->bind_param("sssssssssssss",
         $name, $email, $phone, $linkedin,
         $about, $tagline, $photo, $skill,
@@ -208,8 +206,6 @@ $stmt4->execute();
     $stmt->execute();
 }
 ?>
-    
-    ?>
 
     <script src="userdata.js"></script>
 </body>

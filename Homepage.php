@@ -1,3 +1,16 @@
+
+<?php
+$server   = "localhost";
+$username = "root";
+$password = "web";
+$database = "makefolio";
+
+$conn = mysqli_connect($server, $username, $password, $database);
+
+if (!$conn) {
+    die("Connection Failed: " . mysqli_connect_error());
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,17 +104,7 @@
             </div>
 
         </div>
-      <?php 
-$server = "localhost";
-$username = "root";
-$password = "web";
-$database = "makefolio";
-
-$conn = mysqli_connect($server, $username, $password, $database);
-
-if (!$conn) {
-    die("Connection Failed: " . mysqli_connect_error());
-}
+<?php
 $conn->query("INSERT INTO model (id_model, model_name) VALUES (1, 'hadylmodel')");
 $conn->query("INSERT INTO model (id_model, model_name) VALUES(2, 'imenemodel')");
 $conn->query("INSERT INTO model (id_model, model_name) VALUES(3, 'meriemmodel')");
