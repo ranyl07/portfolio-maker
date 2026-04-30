@@ -18,10 +18,10 @@ The platform solves a common problem: many people struggle to present their skil
 -MySQL
 
 ## ⚙️ Setup & Execution Instructions
-1.
-2.
-3.
-4.
+1. Download or clone the repository. 
+2. Open the project folder.
+3. Run it using a local server.
+4. Open the homepage in your browser.
 
 ## 🚀 Features
 With MakeFolio, users can:
