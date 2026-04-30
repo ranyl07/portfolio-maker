@@ -111,7 +111,5 @@ submit.addEventListener("click", function(){
       socialLinks: [...document.querySelectorAll(".user-contact")].map(el => el.firstChild.textContent.trim()),
       avatar: document.getElementById("user-pic").files[0] || null,
     };
-    localStorage.setItem("userData", JSON.stringify(user));
-    window.location.href = user.template;
 });
   
