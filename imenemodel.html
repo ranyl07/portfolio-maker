@@ -4,13 +4,17 @@
 <meta charset="UTF-8">
 <title>Portfolio Clean</title>
 
-   <link rel="stylesheet" href="imenemodel.css">
+<link rel="stylesheet" href="imenemodel.css">
 </head>
 
 <body>
 
 <nav>
   <div class="logo">My Portfolio</div>
+
+  
+  <button onclick="chooseTemplate(5)">Use this model</button>
+
   <ul>
     <li onclick="scrollToSec('about')">About</li>
     <li onclick="scrollToSec('skills')">Skills</li>
@@ -25,12 +29,12 @@
 <div class="left">
 
   <div class="avatar-box" id="pic">
-  📷 Your Photo Here
-</div>
+    📷 Your Photo Here
+  </div>
 
   <h1>Hi, I'm <span id="name">Your Name</span></h1>
+
   <p id="tagline">Your description here...</p>
-  <br>Second line here...</p>
 </div>
 
 <div class="right">
@@ -40,12 +44,12 @@
     <div class="card" id="about">Write about yourself...</div>
   </div>
 
-  <div class="section" >
+  <div class="section">
     <h2>🟣 SKILLS</h2>
     <div class="skills" id="skills"></div>
   </div>
 
-  <div class="section" id="projects">
+  <div class="section">
     <h2>🟣 PROJECTS</h2>
     <div class="projects" id="projectsBox"></div>
   </div>
@@ -54,14 +58,24 @@
     <h2>🟣 EXPERIENCE</h2>
     <div id="experience"></div>
   </div>
-  <div class="section" id="contact">
+
+  <div class="section">
+    <h2>🟣 EDUCATION</h2>
+    <div id="education"></div>
+  </div>
+
+  <div class="section">
+    <h2>🟣 CERTIFICATES</h2>
+    <div id="certificates"></div>
+  </div>
+
+  <div class="section">
     <h2>🟣 CONTACT</h2>
     <div id="contact"></div>
   </div>
 
 </div>
 
-  <script src="templates.js"></script>
 
 <script src="imenemodel.js"></script>
 
