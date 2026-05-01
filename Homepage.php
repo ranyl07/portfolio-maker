@@ -23,13 +23,12 @@ if (!$conn) {
 
     <header class="head ">
 
-        <img class="logo" src="img/M.png" alt="Logo">
+        <a href="homepage.php"> <img class="logo" src="img/M.png" alt="Logo"></a>
 
         <nav>
             <ul>
                 <li><a href="Homepage.html">Home</a></li>
                 <li><a href="about.html">About portfolio</a></li>
-          
                 <li><a href="yours.html">Yours</a></li>
             </ul>
         </nav>
