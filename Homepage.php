@@ -26,12 +26,12 @@ if (!$conn) {
         <a href="homepage.php"> <img class="logo" src="img/M.png" alt="Logo"></a>
 
         <nav>
-            <ul>
-                <li><a href="Homepage.html">Home</a></li>
-                <li><a href="about.html">About portfolio</a></li>
-                <li><a href="yours.html">Yours</a></li>
-            </ul>
-        </nav>
+    <ul>
+        <li><a href="/makefolio/Homepage.php">Home</a></li>
+        <li><a href="/makefolio/about.html">About portfolio</a></li>
+        <li><a href="/makefolio/usersportfolio.php">Yours</a></li>
+    </ul>
+</nav>
     </header>
 
     <section class="Welcome">
@@ -105,11 +105,18 @@ if (!$conn) {
         </div>
     </section>
     <?php
-$conn->query("INSERT INTO model (id_model, model_name) VALUES (1, 'hadylmodel')");
-$conn->query("INSERT INTO model (id_model, model_name) VALUES(2, 'imenemodel')");
-$conn->query("INSERT INTO model (id_model, model_name) VALUES(3, 'meriemmodel')");
-$conn->query("INSERT INTO model (id_model, model_name) VALUES(4, 'soundosmodel')");
-$conn->query("INSERT INTO model (id_model, model_name) VALUES(5, 'wassilamodel')");
+$models = ['hadylmodel', 'imenemodel', 'meriemmodel', 'soundosmodel', 'wassilamodel'];
+
+foreach ($models as $model) {
+    $stmt = $conn->prepare("INSERT INTO model (model_name) 
+                            SELECT ? FROM DUAL 
+                            WHERE NOT EXISTS (
+                                SELECT 1 FROM model WHERE model_name = ?
+                            )");
+    $stmt->bind_param("ss", $model, $model);
+    $stmt->execute();
+    $stmt->close();
+}
 
 
 ?>

@@ -50,7 +50,7 @@ $conn->close();
         <ul>
             <li><a href="homepage.php">Home</a></li>
             <li><a href="about.html">About portfolio</a></li>
-            <li><a href="user'sportfolio.php">Yours</a></li>
+            <li><a href="usersportfolio.php">Yours</a></li>
         </ul>
     </nav>
 </header>
@@ -86,7 +86,7 @@ $conn->close();
 
 </div>
  <?<php 
-$conn= new mysqli("localhost","root","",portfolio);
+include "homepage.php";
 $id=$_GET['id'];
 $user=$conn->query("SELECT*FROM user WHERE id=$id")->fetch_assoc();
 $portfolio=$conn->query("SELECT*FROM userportfolio WHERE id=$id")->fetch_assoc();
