@@ -44,12 +44,13 @@ $conn->close();
 </head>
 <body>
 <header class="head">
-    <img class="logo" src="img/M.png" alt="Logo">
+  
+        <a href="homepage.php"> <img class="logo" src="img/M.png" alt="Logo"></a>
     <nav>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="homepage.php">Home</a></li>
             <li><a href="about.html">About portfolio</a></li>
-            <li><a href="yours.html">Yours</a></li>
+            <li><a href="user'sportfolio.php">Yours</a></li>
         </ul>
     </nav>
 </header>
