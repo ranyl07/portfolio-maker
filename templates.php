@@ -45,27 +45,27 @@ if (!$conn) {
 <div class="templates">
  <div class="temp">
         <iframe src="hadylmodel.html"></iframe>
-        <button type="submit" class="choose-btn"  name="template" data-model-id="1">Choose</button>
+        <button type="submit" class="choose-btn"  name="template" data-model-id="1">Choose this template</button>
     </div>
     <div class="temp">
         <iframe src="imenemodel.html"></iframe>
-        <button type="submit" name="template" class="choose-btn" >Choose</button>
+        <button type="submit" name="template" class="choose-btn" data-model-id="2" >Choose this template</button>
     </div>
 
    <div class="temp">
         <iframe src="meriemmodel.html"></iframe>
-        <button type="submit" name="template" class="choose-btn" >Choose</button>
+        <button type="submit" name="template" class="choose-btn"data-model-id="3" >Choose this template</button>
     </div>
 
     <div class="temp">
         <iframe src="soundosmodel.html"></iframe>
-        <button type="submit" class="choose-btn" name="template" value="soundosmodel">Choose</button>
+        <button type="submit" class="choose-btn" name="template"data-model-id="4">Choose this template</button>
     </div>
       <div class="temp">
         <iframe src="wassilamodel.html"></iframe>
-        <button type="submit" class="choose-btn" name="template" data-model-id="5">Choose</button>
+        <button type="submit" class="choose-btn" name="template" data-model-id="5">Choose this template</button>
     </div>
- <a href="userdata.php" id="generate">Generate</a>
+ <button onclick="window.location.href ='/makefolio/userdata.php'" id="generate">Generate</button>
 </div>
 
 </form>
