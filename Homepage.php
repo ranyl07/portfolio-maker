@@ -39,9 +39,9 @@ if (!$conn) {
             <h1>Welcome to <em>Makefolio</em></h1>
             <h3 class="Welcome-p">A space where your ideas become your identity</h3>
 
-         <button class="btn-p" onclick="window.location.href='templates.html'">
+         <a class="btn-p" href="window.location.href='/makefolio/templates.php'">
   Discover Our Portfolio
-</button>
+</a>
         </div>
     </section>
 
@@ -56,7 +56,7 @@ if (!$conn) {
 
     <div class="card">
       <a href="hadylmodel.html" >
-       <img src="img/design1.png" alt="project">
+       <img src="img/design1.png" alt="project1">
       <div class="overlay">
         <h3>Project 1</h3></div> 
       </a>
@@ -64,22 +64,21 @@ if (!$conn) {
     </div>
 
     <div class="card">
-       <a href="portfolio.html" >
-        <img src="img/design2.png" alt="project">
+       <a href="imenemodel.html" >
+        <img src="img/design2.png" alt="project2">
       <div class="overlay">
         <h3>Project 2</h3></div>
       </a>
     </div>
 
     <div class="card">
-       <a href="potofolio.html" >
-        <img src="img/design3.png" alt="project">
+       <a href="soundosmodel.html" >
+        <img src="img/design3.png" alt="project3">
       <div class="overlay">
         <h3>Project 3</h3>
       </div>
       </a>
   </div>
-
 </section>
 
     <section class="Aboutus">

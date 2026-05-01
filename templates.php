@@ -1,3 +1,17 @@
+
+
+<?php
+$server   = "localhost";
+$username = "root";
+$password = "";
+$database = "portfolio";
+
+$conn = mysqli_connect($server, $username, $password, $database);
+
+if (!$conn) {
+    die("Connection Failed: " . mysqli_connect_error());
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,43 +20,6 @@
     <title>Our portfolios</title>
 
     <link rel="stylesheet" href="tamplates.css">
-
-    <style>
-        .templates{
-            display:flex;
-            flex-wrap:wrap;
-            gap:20px;
-            justify-content:center;
-        }
-
-        .temp{
-            width:300px;
-            height:400px;
-            background:#eee;
-            border-radius:10px;
-            overflow:hidden;
-            display:flex;
-            flex-direction:column;
-        }
-
-        iframe{
-            width:100%;
-            height:100%;
-            border:none;
-        }
-
-        button{
-            padding:10px;
-            border:none;
-            cursor:pointer;
-            background:#333;
-            color:white;
-        }
-
-        button:hover{
-            background:#555;
-        }
-    </style>
 </head>
 
 <body>
@@ -52,10 +29,10 @@
 
     <nav>
         <ul>
-            <li><a href="Homepage.php">Home</a></li>
-            <li><a href="about.html">About portfolio</a></li>
-            <li><a href="yours.html">Yours</a></li>
-        </ul>
+        <li><a href="/makefolio/Homepage.php">Home</a></li>
+        <li><a href="/makefolio/about.html">About portfolio</a></li>
+        <li><a href="/makefolio/usersportfolio.php">Yours</a></li>
+    </ul>
     </nav>
 </header>
 
@@ -66,25 +43,27 @@
 <form method="POST">
 
 <div class="templates">
-
-    <div class="temp">
-        <iframe src="meriemmodel.html"></iframe>
-        <button type="submit" name="template" value="meriemmodel">Choose</button>
-    </div>
-
-    <div class="temp">
+ <div class="temp">
         <iframe src="hadylmodel.html"></iframe>
-        <button type="submit" name="template" value="hadylmodel">Choose</button>
+        <button type="submit" class="choose-btn"  name="template" data-model-id="1">Choose</button>
+    </div>
+    <div class="temp">
+        <iframe src="imenemodel.html"></iframe>
+        <button type="submit" name="template" class="choose-btn" >Choose</button>
     </div>
 
-    <div class="temp">
-        <iframe src="wassilamodel.html"></iframe>
-        <button type="submit" name="template" value="wassilamodel">Choose</button>
+   <div class="temp">
+        <iframe src="meriemmodel.html"></iframe>
+        <button type="submit" name="template" class="choose-btn" >Choose</button>
     </div>
 
     <div class="temp">
         <iframe src="soundosmodel.html"></iframe>
-        <button type="submit" name="template" value="soundosmodel">Choose</button>
+        <button type="submit" class="choose-btn" name="template" value="soundosmodel">Choose</button>
+    </div>
+      <div class="temp">
+        <iframe src="wassilamodel.html"></iframe>
+        <button type="submit" class="choose-btn" name="template" data-model-id="5">Choose</button>
     </div>
  <a href="userdata.php" id="generate">Generate</a>
 </div>
@@ -92,15 +71,14 @@
 </form>
 
 <?php
- include 'homepage';
-
+ 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $stmt = $conn->prepare("INSERT INTO model (model_name) VALUES (?)");
+    $stmt = $conn->prepare("INSERT INTO user_portfolio (id_model) VALUES (?)");
     $stmt->bind_param("s", $template);
     $stmt->execute();
 

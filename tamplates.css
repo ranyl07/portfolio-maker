@@ -108,7 +108,6 @@ nav ul li a:hover {
   color: var(--third--color);
 }
 
-/* ================= IMAGES ================= */
 
 img {
   width: 90px;
@@ -118,7 +117,18 @@ img {
   padding: 20px;
 }
 
-/* ================= ABOUT PAGE ================= */
+
+.temp iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;        /* removes bottom gap */
+  margin: 0;             /* overrides any inherited margin */
+  padding: 0;            /* overrides any inherited padding */
+  pointer-events: none;  /* prevents iframe from stealing clicks */
+  transform: scale(1);
+  transform-origin: top left;
+}
 
 .about-container {
   width: 85%;

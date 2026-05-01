@@ -60,7 +60,7 @@ $conn->close();
     <div id="empty" class="card">
         <h1>No Portfolio Yet 😕</h1>
         <p>Create a portfolio to express yourself!</p>
-        <a href="/makefolio/userdata.php" class="btn">Make Portfolio</a>
+        <a href="/makefolio/templates.php" class="btn"><span>Make Portfolio</span></a>
     </div>
 
      <div class="hidden">
@@ -71,7 +71,6 @@ $conn->close();
 
 </div>
  <?<php 
-include "homepage.php";
 $id=$_GET['id'];
 $user=$conn->query("SELECT*FROM user WHERE id=$id")->fetch_assoc();
 $portfolio=$conn->query("SELECT*FROM userportfolio WHERE id=$id")->fetch_assoc();

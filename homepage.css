@@ -105,7 +105,9 @@ nav ul li a:hover {
   color: white;
   border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s;}
+  a{
+  text-decoration: none;
 }
 
 .btn-p:hover {

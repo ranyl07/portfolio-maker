@@ -79,3 +79,8 @@ body {
 .hidden {
   display: none;
 }
+span{
+  text-decoration: none;
+  border-radius: 3px;
+  background: #534950;
+}

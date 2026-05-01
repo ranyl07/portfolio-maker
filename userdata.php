@@ -1,4 +1,9 @@
+<?php
+$conn = new mysqli("localhost", "root", "", "portfolio");
 
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,16 +50,6 @@
                     </fieldset>
                     <button class="pre" type="button">Previous</button>
                     <button class="next" type="button">Next</button>
-                </div>
-
-                <div class="fill" id="skills">
-                    <fieldset>
-                        <legend>Skills</legend>
-                        <label>Do you have any skills?</label><br>
-                        <button id="yes" class="btn" type="button">yes</button>
-                        <button class="no" type="button">No</button>
-                    </fieldset>
-                    <button class="pre" type="button">Previous</button>
                 </div>
 
                 <div class="fill">
@@ -144,7 +139,6 @@
 
 
     <?php
-     include homepage.php; 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $name        = htmlspecialchars(trim($_POST['name']));
@@ -212,4 +206,5 @@ $stmt4->execute();
 
     <script src="userdata.js"></script>
 </body>
+
 </html>
