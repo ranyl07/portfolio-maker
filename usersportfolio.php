@@ -57,28 +57,13 @@ $conn->close();
 
 <div class="container">
 
-    <div id="empty" class="card hidden">
+    <div id="empty" class="card">
         <h1>No Portfolio Yet 😕</h1>
         <p>Create a portfolio to express yourself!</p>
-        <a href="userdata.php" class="btn">Make Portfolio</a>
+        <a href="/makefolio/userdata.php" class="btn">Make Portfolio</a>
     </div>
 
-    <div id="portfolio" class="card hidden">
-        <h1 id="name"></h1>
-        <p id="tagline"></p>
-
-        <h2>About</h2>
-        <p id="about"></p>
-
-        <h2>Skills</h2>
-        <div id="skills"></div>
-
-        <h2>Contact</h2>
-        <p id="email"></p>
-        <p id="phone"></p>
-
-        <br>
-
+     <div class="hidden">
         <button class="btn delete" id="delete">Delete</button>
         <button class="btn" id="save">Save</button>
         <button class="btn" id="share">Share</button>
