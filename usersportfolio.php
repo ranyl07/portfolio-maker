@@ -1,86 +1,117 @@
-<?php
-$conn = new mysqli("localhost", "root", "", "portfolio");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$data = null;
-
-// Support shared link with ?id=
-if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-    $id = (int) $_GET['id'];
-    $stmt = $conn->prepare("SELECT up.*, GROUP_CONCAT(s.skill_name SEPARATOR ',') AS skills
-                            FROM user_portfolio up
-                            LEFT JOIN skill s ON s.id_portfolio = up.id_portfolio
-                            WHERE up.id_portfolio = ?
-                            GROUP BY up.id_portfolio");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $data = $result->fetch_assoc();
-    $stmt->close();
-} else {
-    // Load the latest portfolio
-    $result = $conn->query("SELECT up.*, GROUP_CONCAT(s.skill_name SEPARATOR ',') AS skills
-                            FROM user_portfolio up
-                            LEFT JOIN skill s ON s.id_portfolio = up.id_portfolio
-                            GROUP BY up.id_portfolio
-                            ORDER BY up.id_portfolio DESC LIMIT 1");
-    if ($result && $result->num_rows > 0) {
-        $data = $result->fetch_assoc();
-    }
-}
-
-$conn->close();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="usersportfolio.css">
+<meta charset="UTF-8">
+<title>My Portfolio</title>
+<link rel="stylesheet" href="user'sportfolio.css">
 </head>
+
 <body>
-<header class="head">
-  
-        <a href="homepage.php"> <img class="logo" src="img/M.png" alt="Logo"></a>
-    <nav>
-        <ul>
-            <li><a href="homepage.php">Home</a></li>
-            <li><a href="about.html">About portfolio</a></li>
-            <li><a href="usersportfolio.php">Yours</a></li>
-        </ul>
-    </nav>
-</header>
 
 <div class="container">
 
-    <div id="empty" class="card">
-        <h1>No Portfolio Yet 😕</h1>
-        <p>Create a portfolio to express yourself!</p>
-        <a href="/makefolio/templates.php" class="btn"><span>Make Portfolio</span></a>
-    </div>
+ 
+  <div id="empty" class="card hidden">
+    <h1>No Portfolio Yet 😕</h1>
+    <p>Create a portfolio to express your self!</p>
+    <a href="userdata.php" class="btn">Make Portfolio</a>
+  </div>
 
-     <div class="hidden">
-        <button class="btn delete" id="delete">Delete</button>
-        <button class="btn" id="save">Save</button>
-        <button class="btn" id="share">Share</button>
-    </div>
+ 
+  <div id="portfolio" class="card hidden">
+
+    <h1 id="name"></h1>
+    <p id="tagline"></p>
+
+    <h2>About</h2>
+    <p id="about"></p>
+
+    <h2>Skills</h2>
+    <div id="skills"></div>
+
+    <h2>Contact</h2>
+    <p id="email"></p>
+    <p id="phone"></p>
+
+    <br>
+
+    <button class="btn delete" id="delete">Delete</button>
+    <button class="btn" id="save">Save</button>
+    <button class="btn" id="share">Share</button>
+
+  </div>
 
 </div>
- <?<php 
-$id=$_GET['id'];
-$user=$conn->query("SELECT*FROM user WHERE id=$id")->fetch_assoc();
-$portfolio=$conn->query("SELECT*FROM userportfolio WHERE id=$id")->fetch_assoc();
-$projects=$conn->query("SELECT*FROM project WHERE user_id=$id");
-$socials=$conn->query("SELECT*FROM social_link WHERE user_id=$id");
-?>
 
 <script>
-    let portfolioData = <?php echo json_encode($data); ?>;
+let portfolioData = <?php echo json_encode($data); ?>;
 </script>
-<script src="usersportfolio.js"></script>
+
+<script src="user'sportfolio.js"></script>
+
 </body>
 </html>
+<?php 
+$conn= new mysqli("localhost","root","",portfolio);
+$id=$_GET['id'];
+$use_inf =$conn->prepare(" SELECT user.user_name,user.email,user.phone_number,user_portofolio.about,
+user_portofolio.tagline,user_portofolio.avatar,user_portofolio.skill_name,user_portofolio.experience 
+FROM user JOIN user_portfolio ON user.id = user_portfolio.user_id WHERE user.id=?");
+$user_stmt->bind_param("i", $user_id);
+$user_stmt->execute();
+$user = $user_stmt->get_result()->fetch_assoc();
+$project_stmt = $conn->prepare(" SELECT project.project_title, project.description, project.link FROM project
+    WHERE project.user_id = ?");
+$project_stmt->bind_param("i", $user_id);
+$project_stmt->execute();
+$projects = $project_stmt->get_result();
+$skill_stmt = $conn->prepare(" SELECT user_portfolio.skill_name FROM user_portfolio WHERE user_portfolio.user_id = ?");
+$skill_stmt->bind_param("i", $user_id);
+$skill_stmt->execute();
+$skills = $skill_stmt->get_result();
+$social_stmt = $conn->prepare(" SELECT social_link.platform_link FROM social_link WHERE social_link.user_id = ?");
+$social_stmt->bind_param("i", $user_id);
+$social_stmt->execute();
+$socials = $social_stmt->get_result();?>
+
+<?php
+$conn = new mysqli("localhost","root","","portfolio");
+
+
+$conn->query("DELETE FROM skill WHERE id_portfolio = (SELECT id_portfolio FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1)");
+
+$conn->query("DELETE FROM user WHERE id_portfolio = (SELECT id_portfolio FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1)");
+
+$conn->query("DELETE FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1");
+
+echo "deleted";
+?>
+
+<?php
+$conn = new mysqli("localhost","root","","portfolio");
+
+
+$result = $conn->query("SELECT id_portfolio FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1");
+
+$row = $result->fetch_assoc();
+$id = $row['id_portfolio'];
+
+
+$link = "http://localhost/project/portfolio.php?id=".$id;
+
+
+$conn->query("UPDATE user_portfolio SET share_link='$link' WHERE id_portfolio=$id");
+
+echo $link;
+?>
+
+<?php
+$conn = new mysqli("localhost","root","","portfolio");
+
+
+$result = $conn->query("SELECT share_link FROM user_portfolio ORDER BY id_portfolio DESC LIMIT 1");
+
+$row = $result->fetch_assoc();
+
+echo $row['share_link'];
+?>
