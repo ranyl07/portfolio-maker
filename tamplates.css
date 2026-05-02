@@ -216,8 +216,9 @@ img {
   font-weight: bold;
   color: var(--second--color);
 }
-
-/* ================= ANIMATION BACKGROUND (ABOUT PAGE) ================= */
+.generate {
+  align-self: flex-end;
+}
 
 body.about {
   background: radial-gradient(circle at 20% 20%, var(--second--color), transparent 40%),
