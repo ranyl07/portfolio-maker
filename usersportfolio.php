@@ -47,9 +47,6 @@ let portfolioData = <?php echo json_encode($data); ?>;
 </script>
 
 <script src="user'sportfolio.js"></script>
-
-</body>
-</html>
 <?php 
 $conn= new mysqli("localhost","root","",portfolio);
 $id=$_GET['id'];
@@ -72,6 +69,9 @@ $social_stmt = $conn->prepare(" SELECT social_link.platform_link FROM social_lin
 $social_stmt->bind_param("i", $user_id);
 $social_stmt->execute();
 $socials = $social_stmt->get_result();?>
+</body>
+</html>
+
 
 <?php
 $conn = new mysqli("localhost","root","","portfolio");
